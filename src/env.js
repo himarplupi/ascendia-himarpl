@@ -18,7 +18,7 @@ export const env = createEnv({
       .enum(["development", "test", "production"])
       .default("development"),
     BASE_URL: z.string().url(),
-    BASE_PATH: z.string(),
+    BASE_PATH: z.string().optional(),
   },
 
   /**
