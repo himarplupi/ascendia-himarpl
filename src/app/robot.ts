@@ -6,8 +6,8 @@ const robots = (): MetadataRoute.Robots => ({
   rules: [
     {
       userAgent: "*",
-      disallow: ["/dist/", "/docs/"],
-      allow: ["/dist/latest/", "/dist/latest/docs/api/", "/api/"],
+      disallow: [],
+      allow: "/",
     },
   ],
 });
