@@ -35,12 +35,12 @@ const fontSerif = localFont({
       style: "italic",
     },
     {
-      path: "./fonts/minion-pro/MinionPro-SemiBold.otf",
+      path: "./fonts/minion-pro/MinionPro-Semibold.otf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "./fonts/minion-pro/MinionPro-SemiBoldIt.otf",
+      path: "./fonts/minion-pro/MinionPro-SemiboldIt.otf",
       weight: "600",
       style: "italic",
     },
