@@ -7,10 +7,10 @@ export default function Home() {
     <>
       <nav className="container bg-secondary/50 py-2 text-center">
         <Link
-          href="https://pmb.himarpl.com"
+          href="https://lomba.himarpl.com/"
           className="underline transition hover:text-foreground/75"
         >
-          Website Informasi Penerimaan Mahasiswa Baru Telah Dibuka
+          Ikuti Lomba Poster Dies Natalis RPL ke-5 Disini! Gratis Loh!
         </Link>
       </nav>
       <main className="container flex min-h-screen flex-col items-center justify-center py-8">
