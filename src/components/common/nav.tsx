@@ -68,6 +68,7 @@ const textDefaultAnimation: Variants = {
 };
 
 interface NavProps {
+  className?: string;
   links: {
     title: string;
     label?: string;
@@ -77,9 +78,9 @@ interface NavProps {
   }[];
 }
 
-export function Nav({ links }: NavProps) {
+export function Nav({ links, className }: NavProps) {
   return (
-    <div className="group flex flex-col gap-4 py-2">
+    <div className={cn("group flex flex-col gap-4 py-2", className)}>
       <nav className="grid gap-1 px-2">
         {links.map((link, index) => (
           <NavLink key={index} link={link} />
