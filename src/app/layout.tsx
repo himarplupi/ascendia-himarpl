@@ -60,7 +60,8 @@ const fontSerif = localFont({
 
 export const metadata = {
   title: "HIMARPL",
-  description: "Masih dalam tahap pengembangan!",
+  description:
+    "Wujud kebersamaan, kolaborasi, dedikasi, inspirasi, inovasi, dan prestasi kami, mahasiswa RPL. HIMARPL adalah organisasi kemahasiswaan program studi Rekayasa Perangkat Lunak Universitas Pendidikan Indonesia",
   icons: [
     {
       rel: "icon",
