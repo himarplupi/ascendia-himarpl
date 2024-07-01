@@ -2,6 +2,7 @@ import { Montserrat as FontSans } from "next/font/google";
 import localFont from "next/font/local";
 
 import { GlobalFooter } from "@/components/common/global-footer";
+import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import { TRPCReactProvider } from "@/trpc/react";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
@@ -98,14 +99,16 @@ export default async function RootLayout({
 
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen font-sans antialiased",
           fontSans.variable,
           fontSerif.variable,
         )}
       >
         <TRPCReactProvider>
-          {children}
-          <GlobalFooter />
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            {children}
+            <GlobalFooter />
+          </ThemeProvider>
         </TRPCReactProvider>
       </body>
 

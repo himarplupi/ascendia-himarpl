@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 import { Mail } from "lucide-react";
 
 import { buttonVariants } from "@/components/ui/button";
 import LogoKabinetAscendia from "@/images/logo-ascendia-landscape-dark.png";
-import LogoHIMARPL from "@/images/logo-landscape-dark.png";
+import LogoLandscapeHIMARPLDark from "@/images/logo-landscape-dark.png";
+import LogoLandscapeHIMARPLLight from "@/images/logo-landscape-light.png";
 import LogoUPICibiru from "@/images/logo-upi-cibiru.png";
 import { cn } from "@/lib/utils";
 import {
@@ -16,6 +18,8 @@ import {
 } from "@icons-pack/react-simple-icons";
 
 export function GlobalFooter() {
+  const { resolvedTheme } = useTheme();
+
   return (
     <footer className="container bg-secondary/25 pt-6 text-secondary-foreground">
       <div className="flex flex-col gap-y-6 md:px-8">
@@ -25,12 +29,27 @@ export function GlobalFooter() {
             alt="logo Kampus UPI di Cibiru"
             width={150}
           />
-          <Image src={LogoHIMARPL} alt="logo HIMARPL" width={200} />
-          <Image
-            src={LogoKabinetAscendia}
-            alt="logo Kabinet Ascendia"
-            width={150}
-          />
+          {resolvedTheme === "dark" ? (
+            <Image
+              src={LogoLandscapeHIMARPLDark}
+              alt="logo HIMARPL"
+              width={200}
+            />
+          ) : (
+            <Image
+              src={LogoLandscapeHIMARPLLight}
+              alt="logo HIMARPL"
+              width={200}
+            />
+          )}
+
+          <div>
+            <Image
+              src={LogoKabinetAscendia}
+              alt="logo Kabinet Ascendia"
+              width={150}
+            />
+          </div>
         </div>
 
         <div className="flex flex-col justify-between gap-4 sm:flex-row">
