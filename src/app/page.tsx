@@ -9,10 +9,10 @@ export default function Home() {
     <>
       <nav className="container space-x-2 bg-secondary/50 py-2 text-center">
         <Link
-          href="https://pmb.himarpl.com"
+          href="https://lomba.himarpl.com/"
           className="underline transition hover:text-foreground/75"
         >
-          Website Informasi Penerimaan Mahasiswa Baru Telah Dibuka
+          Ikuti Lomba Poster Dies Natalis RPL ke-5 Disini! Gratis Loh!
         </Link>
 
         <ThemeModeToggle />
