@@ -1,10 +1,10 @@
-import "server-only";
-
-import { headers } from "next/headers";
 import { cache } from "react";
+import { headers } from "next/headers";
 
 import { createCaller } from "@/server/api/root";
 import { createTRPCContext } from "@/server/api/trpc";
+
+import "server-only";
 
 /**
  * This wraps the `createTRPCContext` helper and provides the required context for the tRPC API when

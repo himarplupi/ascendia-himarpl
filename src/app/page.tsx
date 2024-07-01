@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import { LogoAscendia } from "@/components/brand/logo-ascendia";
 import { ComingSoon } from "@/components/home/coming-soon";
 
