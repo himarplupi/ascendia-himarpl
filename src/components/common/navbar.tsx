@@ -19,6 +19,7 @@ import {
   SheetContent,
   SheetFooter,
   SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 
@@ -72,6 +73,7 @@ export function Navbar() {
         <SheetContent side="right" className="flex flex-col justify-between">
           <div>
             <SheetHeader>
+              <SheetTitle className="sr-only">HIMARPL</SheetTitle>
               <LogoHIMARPLLandscape className="w-40" />
             </SheetHeader>
             <Nav

@@ -14,7 +14,7 @@ export default function DedicationLayout({
   children: React.ReactNode;
 }) {
   return (
-    <LenisSmoothScroll>
+    <LenisSmoothScroll root>
       {children}
       <GlobalFooter />
     </LenisSmoothScroll>
