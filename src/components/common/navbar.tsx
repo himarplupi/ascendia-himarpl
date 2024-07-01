@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import { useTheme } from "next-themes";
 import {
   BookUserIcon,
   FlameIcon,
@@ -12,6 +10,7 @@ import {
   XIcon,
 } from "lucide-react";
 
+import { LogoHIMARPLLandscape } from "@/components/brand/logo-himarpl-landscape";
 import { Nav } from "@/components/common/nav";
 import { Button } from "@/components/ui/button";
 import {
@@ -22,40 +21,11 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import LogoLandscapeHIMARPLDark from "@/images/logo-landscape-dark.png";
-import LogoLandscapeHIMARPLLight from "@/images/logo-landscape-light.png";
-import { cn } from "@/lib/utils";
-
-interface BrandLogoProps {
-  className?: string;
-}
-
-function BrandLogo({ className }: BrandLogoProps) {
-  const { resolvedTheme } = useTheme();
-
-  return (
-    <div
-      id="brand-logo"
-      className={cn("relative aspect-video w-32", className)}
-    >
-      <Image
-        className="object-scale-down"
-        src={
-          resolvedTheme === "dark"
-            ? LogoLandscapeHIMARPLDark
-            : LogoLandscapeHIMARPLLight
-        }
-        alt="logo landscape HIMARPL"
-        fill
-      />
-    </div>
-  );
-}
 
 export function Navbar() {
   return (
     <nav className="container fixed z-10 flex items-center justify-between bg-background shadow">
-      <BrandLogo />
+      <LogoHIMARPLLandscape />
 
       <Nav
         className="hidden md:flex"
@@ -102,7 +72,7 @@ export function Navbar() {
         <SheetContent side="right" className="flex flex-col justify-between">
           <div>
             <SheetHeader>
-              <BrandLogo className="w-40" />
+              <LogoHIMARPLLandscape className="w-40" />
             </SheetHeader>
             <Nav
               links={[
