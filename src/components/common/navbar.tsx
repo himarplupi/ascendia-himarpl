@@ -54,7 +54,7 @@ function BrandLogo({ className }: BrandLogoProps) {
 
 export function Navbar() {
   return (
-    <nav className="container fixed z-50 flex items-center justify-between bg-background shadow">
+    <nav className="container fixed z-10 flex items-center justify-between bg-background shadow">
       <BrandLogo />
 
       <Nav
@@ -95,7 +95,7 @@ export function Navbar() {
 
       <Sheet>
         <SheetTrigger asChild>
-          <Button size="icon" variant="outline">
+          <Button className="md:hidden" size="icon" variant="outline">
             <MenuIcon />
           </Button>
         </SheetTrigger>

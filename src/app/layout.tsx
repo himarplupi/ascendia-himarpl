@@ -1,6 +1,7 @@
 import { Montserrat as FontSans } from "next/font/google";
 import localFont from "next/font/local";
 
+import { Navbar } from "@/components/common";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import { TRPCReactProvider } from "@/trpc/react";
@@ -109,6 +110,7 @@ export default async function RootLayout({
             attribute="class"
             defaultTheme="light"
           >
+            <Navbar />
             {children}
           </ThemeProvider>
         </TRPCReactProvider>

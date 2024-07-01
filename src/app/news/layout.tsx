@@ -3,12 +3,11 @@ import type { Metadata } from "next";
 import { GlobalFooter, LenisSmoothScroll } from "@/components/common";
 
 export const metadata: Metadata = {
-  title: "Dedikasi HIMARPL",
-  description:
-    "Dedikasi dari program kerja pengurus HIMARPL, yakni penangguhan dan cicilan UKT, cuti kuliah, AdForYou, serta forum Respiration, simak selengkapnya di sini!",
+  title: "Berita HIMARPL",
+  description: "Berita terkini dari HIMARPL, simak selengkapnya di sini!",
 };
 
-export default function DedicationLayout({
+export default function NewsLayout({
   children,
 }: {
   children: React.ReactNode;
