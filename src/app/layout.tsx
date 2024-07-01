@@ -1,7 +1,6 @@
 import { Montserrat as FontSans } from "next/font/google";
 import localFont from "next/font/local";
 
-import { GlobalFooter } from "@/components/common/global-footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import { TRPCReactProvider } from "@/trpc/react";
@@ -94,7 +93,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="id">
       <GoogleTagManager gtmId="G-BGJQJGNW91" />
 
       <body
@@ -105,9 +104,12 @@ export default async function RootLayout({
         )}
       >
         <TRPCReactProvider>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeProvider
+            forcedTheme="light"
+            attribute="class"
+            defaultTheme="light"
+          >
             {children}
-            <GlobalFooter />
           </ThemeProvider>
         </TRPCReactProvider>
       </body>
