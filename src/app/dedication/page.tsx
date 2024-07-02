@@ -1,8 +1,11 @@
+import Link from "next/link";
+
 import { HorizontalScrollText } from "@/components/common/horizontal-scroll-text";
 import { Lampiran } from "@/components/dedication/lampiran";
 import { FadeIn } from "@/components/motion/fade-in";
 import { MotionText } from "@/components/motion/motion-text";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function DedicationPage() {
   return (
@@ -40,7 +43,13 @@ export default function DedicationPage() {
             <div className="w-full bg-opacity-50 bg-white-paper bg-[length:100px_100px] bg-repeat py-8 mix-blend-luminosity md:w-96">
               <section className="container flex w-full flex-col justify-center gap-2 md:h-40">
                 <Lampiran type="dedication-1" />
-                <Button variant="outline">Hubungi Advokastra</Button>
+                <Link
+                  target="_blank"
+                  href="https://wa.me/+6285885725027"
+                  className={cn(buttonVariants({ variant: "outline" }))}
+                >
+                  Hubungi Advokastra
+                </Link>
               </section>
             </div>
           </div>
@@ -85,7 +94,7 @@ export default function DedicationPage() {
         </div>
       </FadeIn>
 
-      <FadeIn amount={0.5}>
+      <FadeIn amount={0.2}>
         <div className="lg:flex">
           <section className="container my-8 lg:w-1/2">
             <div className="flex gap-x-2 md:gap-x-8">
@@ -97,6 +106,7 @@ export default function DedicationPage() {
                     y: 118,
                   }}
                   delay={0.5}
+                  amount={0.5}
                 />
                 <MotionText
                   type="word"
@@ -105,6 +115,7 @@ export default function DedicationPage() {
                     y: 118,
                   }}
                   delay={1.5}
+                  amount={0.5}
                 />
                 <MotionText
                   type="word"
@@ -113,6 +124,7 @@ export default function DedicationPage() {
                     y: 118,
                   }}
                   delay={2}
+                  amount={0.5}
                 />
               </h2>
 
@@ -136,7 +148,13 @@ export default function DedicationPage() {
             <div className="flex h-full w-full items-end justify-center lg:relative">
               <div className="w-full bg-opacity-50 bg-white-paper bg-[length:100px_100px] bg-repeat py-8 mix-blend-luminosity lg:absolute lg:bottom-6 lg:right-6 lg:w-64">
                 <section className="container flex w-full flex-col gap-2">
-                  <Button variant="outline">Hubungi Advokastra</Button>
+                  <Link
+                    target="_blank"
+                    href="https://wa.me/+6285885725027"
+                    className={cn(buttonVariants({ variant: "outline" }))}
+                  >
+                    Hubungi Advokastra
+                  </Link>
                 </section>
               </div>
             </div>
@@ -184,7 +202,13 @@ export default function DedicationPage() {
                 </p>
               </FadeIn>
               <FadeIn amount={0.5} delay={2.2}>
-                <Button className="w-full">Formulir Respiration</Button>
+                <Link
+                  target="_blank"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSemtkI-HpnIwRwE4VSfmO1s1S9hdIKU46wc5Ww8nHXfHaiBcw/viewform"
+                  className={cn("w-full", buttonVariants())}
+                >
+                  Formulir Respiration
+                </Link>
               </FadeIn>
             </section>
           </div>
