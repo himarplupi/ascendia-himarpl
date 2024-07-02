@@ -15,9 +15,8 @@ const iconDefaultAnimation: Variants = {
     rotate: 15,
     transition: {
       type: "spring",
-      damping: 24,
+      damping: 32,
       stiffness: 500,
-      bounce: 0.5,
     },
   },
   visible: {
@@ -25,9 +24,8 @@ const iconDefaultAnimation: Variants = {
     rotate: 0,
     transition: {
       type: "spring",
-      damping: 24,
+      damping: 32,
       stiffness: 500,
-      bounce: 0.5,
       delay: 0.2,
     },
   },
@@ -50,18 +48,16 @@ const textDefaultAnimation: Variants = {
     x: -20,
     transition: {
       type: "spring",
-      damping: 16,
+      damping: 32,
       stiffness: 500,
-      bounce: 0.5,
     },
   },
   visible: {
     x: 0,
     transition: {
       type: "spring",
-      damping: 16,
+      damping: 32,
       stiffness: 500,
-      bounce: 0.5,
       delay: 0.2,
     },
   },
