@@ -1,5 +1,6 @@
 import { HorizontalScrollText } from "@/components/common/horizontal-scroll-text";
 import { Lampiran } from "@/components/dedication/lampiran";
+import { MotionText } from "@/components/motion/motion-text";
 import { Button } from "@/components/ui/button";
 
 export default function DedicationPage() {
@@ -8,11 +9,18 @@ export default function DedicationPage() {
       <section className="container md:px-0">
         <div className="mt-4 flex flex-col">
           <h2 className="font-serif text-2xl font-bold italic tracking-wide md:text-4xl">
-            Penangguhan dan Cicilan
+            <MotionText type="word" text={"Penangguhan dan Cicilan"} />
           </h2>
           <div className="gap-x-4 md:flex lg:gap-x-8">
             <h2 className="font-serif text-7xl font-bold italic tracking-wider text-blue-ribbon-600 md:text-9xl">
-              UKT
+              <MotionText
+                type="char"
+                text={"UKT"}
+                hidden={{
+                  y: 118,
+                }}
+                delay={1.6}
+              />
             </h2>
             <p className="mt-4 leading-6 tracking-tight md:text-lg lg:mt-6 lg:w-[682px]">
               Mahasiswa dapat mengajukan permohonan dengan melampirkan dokumen
@@ -44,7 +52,13 @@ export default function DedicationPage() {
           <div className="flex h-full w-full items-center justify-center bg-white-transparent-white-gradient md:py-12 lg:absolute lg:left-[50%] lg:h-fit lg:w-96 lg:bg-opacity-0">
             <section className="container w-full">
               <h2 className="mt-4 font-serif text-7xl font-bold italic tracking-wide text-bright-sun-500 md:text-9xl">
-                Cuti Kuliah
+                <MotionText
+                  type="word"
+                  text={"Cuti Kuliah"}
+                  hidden={{
+                    y: 118,
+                  }}
+                />
               </h2>
             </section>
           </div>
@@ -66,14 +80,34 @@ export default function DedicationPage() {
         <section className="container my-8 lg:w-1/2">
           <div className="flex gap-x-2 md:gap-x-8">
             <h2 className="flex flex-col font-serif text-7xl font-bold italic tracking-wider  text-blue-ribbon-600 md:text-9xl">
-              <span>Ad</span>
-              <span>For</span>
-              <span>You</span>
+              <MotionText
+                type="word"
+                text={"Ad"}
+                hidden={{
+                  y: 118,
+                }}
+              />
+              <MotionText
+                type="word"
+                text={"For"}
+                hidden={{
+                  y: 118,
+                }}
+                delay={0.5}
+              />
+              <MotionText
+                type="word"
+                text={"You"}
+                hidden={{
+                  y: 118,
+                }}
+                delay={1}
+              />
             </h2>
 
             <aside className="space-y-4 pt-9 md:space-y-6 md:pt-16">
               <h4 className="flex flex-col text-2xl font-semibold italic tracking-wide md:text-4xl">
-                vo-kastra
+                <MotionText type="word" text={"vo-kastra"} delay={2.5} />
               </h4>
 
               <p className="mt-4 leading-6 tracking-tight md:text-lg">
@@ -101,15 +135,27 @@ export default function DedicationPage() {
           <div className="h-64 w-full bg-dedication-burta bg-cover bg-no-repeat md:h-80 md:bg-center lg:h-[512px] lg:w-1/2 lg:bg-background">
             <div className="flex h-full w-full items-end justify-center bg-dark-transparent-dark-gradient pb-6 lg:opacity-0">
               <section className="container w-full">
-                <h2 className="mt-4 text-center font-serif text-5xl font-bold italic tracking-wide text-background md:text-7xl lg:hidden">
-                  Respiration
+                <h2 className="mt-4 text-center font-serif text-5xl font-bold italic leading-tight tracking-wide text-background md:text-7xl lg:hidden">
+                  <MotionText
+                    type="word"
+                    text={"Respiration"}
+                    hidden={{
+                      y: 52,
+                    }}
+                  />
                 </h2>
               </section>
             </div>
           </div>
           <section className="container my-8 space-y-4 md:px-0 lg:my-0 lg:flex lg:h-[512px] lg:w-1/2 lg:flex-col lg:justify-center lg:space-y-6 lg:bg-background lg:px-12">
-            <h2 className="font-serif text-7xl font-bold italic tracking-wide">
-              Respiration
+            <h2 className="hidden font-serif text-7xl font-bold italic tracking-wide lg:block">
+              <MotionText
+                type="word"
+                text={"Respiration"}
+                hidden={{
+                  y: 80,
+                }}
+              />
             </h2>
 
             <p className="leading-6 tracking-tight md:text-lg">
