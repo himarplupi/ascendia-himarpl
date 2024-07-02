@@ -22,7 +22,7 @@ export function GlobalFooter() {
   const { resolvedTheme } = useTheme();
 
   return (
-    <footer className="container bg-secondary/25 pt-6 text-secondary-foreground">
+    <footer className="container bg-muted pt-6">
       <div className="flex flex-col gap-y-6 md:px-8">
         <div className="flex flex-col items-center gap-2 sm:flex-row">
           <Image
@@ -43,8 +43,7 @@ export function GlobalFooter() {
               width={200}
             />
           )}
-{resolvedTheme === "dark" ? (
-            
+          {resolvedTheme === "dark" ? (
             <Image
               src={LogoKabinetAscendiaDark}
               alt="logo Kabinet Ascendia Dark"
