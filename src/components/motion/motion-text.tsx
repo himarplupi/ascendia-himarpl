@@ -57,6 +57,7 @@ type MotionTextProps = {
   transition?: Transition;
   delay?: number;
   once?: boolean;
+  amount?: number;
 };
 
 export function MotionText({
@@ -67,10 +68,11 @@ export function MotionText({
   delay = 0,
   type = "char",
   once = true,
+  amount = 1,
 }: MotionTextProps) {
   const textArray = Array.isArray(text) ? text : [text];
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { amount: 1, once: once });
+  const isInView = useInView(ref, { amount, once });
 
   if (type === "word") {
     return (
