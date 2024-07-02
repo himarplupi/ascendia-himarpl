@@ -26,13 +26,18 @@ export default function DedicationPage() {
                 delay={1.6}
               />
             </h2>
-            <FadeIn amount={0.5} to="right" delay={3}>
-              <p className="mt-4 leading-6 tracking-tight md:text-lg lg:mt-6 lg:w-[682px]">
+            <p className="mt-4 leading-6 tracking-tight md:w-[410px] md:text-lg lg:mt-6 lg:w-[682px]">
+              <FadeIn
+                amount={0.5}
+                to="right"
+                delay={3}
+                className="inline-block"
+              >
                 Mahasiswa dapat mengajukan permohonan dengan melampirkan dokumen
                 pendukung. Program ini diharapkan membantu mahasiswa
                 menyelesaikan studi tanpa tekanan finansial yang berlebihan.
-              </p>
-            </FadeIn>
+              </FadeIn>
+            </p>
           </div>
         </div>
       </section>

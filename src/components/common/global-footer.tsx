@@ -22,7 +22,7 @@ export function GlobalFooter() {
   const { resolvedTheme } = useTheme();
 
   return (
-    <footer className="container bg-muted pt-6">
+    <footer className="container bg-muted/50 pt-6">
       <div className="flex flex-col gap-y-6 md:px-8">
         <div className="flex flex-col items-center gap-2 sm:flex-row">
           <Image

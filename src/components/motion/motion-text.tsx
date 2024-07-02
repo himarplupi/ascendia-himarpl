@@ -58,6 +58,7 @@ type MotionTextProps = {
   delay?: number;
   once?: boolean;
   amount?: number;
+  className?: string;
 };
 
 export function MotionText({
@@ -69,6 +70,7 @@ export function MotionText({
   type = "char",
   once = true,
   amount = 1,
+  className,
 }: MotionTextProps) {
   const textArray = Array.isArray(text) ? text : [text];
   const ref = useRef<HTMLSpanElement>(null);
@@ -88,9 +90,10 @@ export function MotionText({
             ...transition,
           }}
           aria-hidden
+          className={className}
         >
           {textArray.map((line, i) => (
-            <span key={`${line}${i}`} className="block">
+            <span key={`${line}${i}`} className="inline-block">
               {line.split(" ").map((word, j) => (
                 <span
                   key={`${word}${j}`}
@@ -131,6 +134,7 @@ export function MotionText({
           delayChildren: delay,
         }}
         aria-hidden
+        className={className}
       >
         {textArray.map((line, i) => (
           <span key={`${line}${i}`} className="block">

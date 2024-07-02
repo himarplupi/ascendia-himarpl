@@ -14,6 +14,7 @@ type MotionTextProps = {
   once?: boolean;
   amount?: number;
   children: React.ReactNode;
+  className?: string;
 };
 
 export function FadeIn({
@@ -22,6 +23,7 @@ export function FadeIn({
   once = true,
   amount = 1,
   children,
+  className,
 }: MotionTextProps) {
   const { fadeInVariant, isInView, ref } = useFadeIn(delay, to, once, amount);
 
@@ -31,6 +33,7 @@ export function FadeIn({
       variants={fadeInVariant()}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
+      className={className}
     >
       {children}
     </motion.div>
