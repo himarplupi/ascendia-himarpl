@@ -16,7 +16,7 @@ export default function DedicationLayout({
   return (
     <LenisSmoothScroll root>
       {children}
-      <div className="container">
+      <div className="md:container">
         <GlobalFooter />
       </div>
     </LenisSmoothScroll>
