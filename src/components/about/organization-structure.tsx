@@ -231,7 +231,7 @@ const nodeTypes = {
 
 export function OrganizationStructure() {
   return (
-    <div className="h-[448px] w-full md:h-[320px]">
+    <div className="h-[448px] max-h-[768px] w-full md:h-screen">
       <OrganizationStructureFlow />
     </div>
   );

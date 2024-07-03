@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { History } from "@/components/about/history";
 import Missions from "@/components/about/missions";
 import { OrganizationDocuments } from "@/components/about/organization-documents";
 import { OrganizationStructure } from "@/components/about/organization-structure";
@@ -216,6 +217,51 @@ export default function AboutPage() {
         </div>
 
         <OrganizationStructure />
+      </section>
+
+      <section>
+        <div className="relative h-fit w-full bg-about-3 bg-cover bg-center bg-no-repeat py-12 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:bg-opacity-75 before:bg-dark-transparent-dark-gradient before:backdrop-blur-sm before:backdrop-brightness-75 before:md:backdrop-blur-none">
+          <div className="relative z-[2] flex h-full w-full items-center justify-center md:justify-end ">
+            <div className="w-full space-y-6">
+              <div className="container flex w-full flex-col items-center justify-center gap-2">
+                <h2 className="flex flex-col gap-y-1">
+                  <span className="text-center font-serif text-4xl font-bold italic tracking-wider text-bright-sun-300 md:text-6xl">
+                    <MotionText
+                      type="word"
+                      text={"Perjalanan"}
+                      hidden={{
+                        y: 128,
+                      }}
+                      delay={0.2}
+                    />
+                  </span>
+                  <span className="text-center font-serif text-6xl font-bold italic tracking-wider text-bright-sun-300 md:text-8xl">
+                    <MotionText
+                      type="word"
+                      text={"HIMARPL"}
+                      hidden={{
+                        y: 128,
+                      }}
+                      delay={0.6}
+                    />
+                  </span>
+                </h2>
+              </div>
+
+              <div className="hidden w-full overflow-hidden bg-zinc-100 bg-opacity-75 py-6 md:block">
+                <FadeIn delay={1.2} amount={0.5}>
+                  <History />
+                </FadeIn>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="py-12 md:hidden">
+          <FadeIn delay={1.2} amount={0.5}>
+            <History />
+          </FadeIn>
+        </div>
       </section>
     </main>
   );
