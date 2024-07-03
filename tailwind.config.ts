@@ -30,6 +30,14 @@ const config = {
           "url('https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-dedication-advo.png')",
         "dedication-burta":
           "url('https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-dedication-burta.png')",
+        "about-1":
+          "url('https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-about-1.png')",
+        "about-2":
+          "url('https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-about-2.png')",
+        "about-3":
+          "url('https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-about-3.png')",
+        "home-1":
+          "url('https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-home-1.png')",
         "dark-transparent-dark-gradient":
           "linear-gradient(180deg, rgba(9, 9, 11, 0.75) 0%, rgba(9, 9, 11, 0.1875) 50%, rgba(9, 9, 11, 0.75) 100%)",
         "white-transparent-white-gradient":

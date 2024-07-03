@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { GlobalFooter, LenisSmoothScroll } from "@/components/common";
+import { GlobalFooter } from "@/components/common";
 
 export const metadata: Metadata = {
   title: "Dedikasi HIMARPL",
@@ -14,11 +14,11 @@ export default function DedicationLayout({
   children: React.ReactNode;
 }) {
   return (
-    <LenisSmoothScroll root>
+    <>
       {children}
       <div className="md:container">
         <GlobalFooter />
       </div>
-    </LenisSmoothScroll>
+    </>
   );
 }

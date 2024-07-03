@@ -15,13 +15,13 @@ export default async function NewsPage() {
   const filteredNews = news.slice(1);
 
   return (
-    <main className="min-h-screen pb-24 md:container">
-      <section className="relative flex min-h-screen w-full items-end bg-zinc-800">
+    <main className="pb-24 md:container">
+      <section className="relative flex h-screen w-full items-end bg-zinc-800 lg:max-h-[768px]">
         {latestNews && (
           <>
             <div className="absolute right-0 top-16">
               <FadeIn>
-                <div className="relative h-[512px] w-[100vw] before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:bg-opacity-75 before:bg-dark-transparent-dark-gradient md:w-[80vw]">
+                <div className="relative h-[512px] w-[100vw] before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:bg-opacity-75 before:bg-dark-transparent-dark-gradient md:w-[80vw] lg:w-[900px]">
                   <Image
                     src={latestNews?.image ?? ""}
                     alt={`${latestNews?.metaTitle} thumbnail`}

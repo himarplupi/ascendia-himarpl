@@ -1,7 +1,5 @@
 export default function AboutPage() {
   return (
-    <main className="container flex min-h-screen items-center justify-center py-8">
-      About
-    </main>
+    <main className="min-h-screen pb-10 pt-20 md:container lg:pb-0"></main>
   );
 }

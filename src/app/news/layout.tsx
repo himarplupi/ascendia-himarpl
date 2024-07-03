@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { GlobalFooter, LenisSmoothScroll } from "@/components/common";
+import { GlobalFooter } from "@/components/common";
 
 export const metadata: Metadata = {
   title: "Berita HIMARPL",
@@ -13,9 +13,12 @@ export default function NewsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <LenisSmoothScroll>
+    <>
       {children}
-      <GlobalFooter />
-    </LenisSmoothScroll>
+
+      <div className="md:container">
+        <GlobalFooter />
+      </div>
+    </>
   );
 }

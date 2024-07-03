@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { GlobalFooter, LenisSmoothScroll } from "@/components/common";
+import { GlobalFooter } from "@/components/common";
 
 export const metadata: Metadata = {
   title: "Kontak HIMARPL",
@@ -14,9 +14,12 @@ export default function ContactLayout({
   children: React.ReactNode;
 }) {
   return (
-    <LenisSmoothScroll>
+    <>
       {children}
-      <GlobalFooter />
-    </LenisSmoothScroll>
+
+      <div className="md:container">
+        <GlobalFooter />
+      </div>
+    </>
   );
 }
