@@ -118,7 +118,7 @@ export default function AboutPage() {
         </div>
 
         <div className="container flex flex-col gap-y-6 py-12 text-zinc-200 md:flex-row md:justify-between md:gap-x-12">
-          <div className="md:flex md:w-1/2 md:max-w-[512px] md:flex-col md:justify-between">
+          <div className="md:flex md:w-1/2 md:max-w-[600px] md:flex-col md:justify-between">
             <div>
               <h3 className="font-serif text-4xl font-semibold tracking-wide text-zinc-50 md:text-6xl">
                 <MotionText
@@ -147,7 +147,7 @@ export default function AboutPage() {
             </FadeIn>
           </div>
 
-          <div className="md:w-1/2 md:max-w-[512px] ">
+          <div className="md:w-1/2 md:max-w-[600px] ">
             <h3 className="font-serif text-4xl font-semibold tracking-wide text-zinc-50 md:text-6xl">
               <MotionText
                 type="word"
