@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+import Missions from "@/components/about/missions";
+import { OrganizationDocuments } from "@/components/about/organization-documents";
+import { OrganizationStructure } from "@/components/about/organization-structure";
 import { LogoAscendia } from "@/components/brand/logo-ascendia";
 import { LogoHIMARPL } from "@/components/brand/logo-himarpl";
 import { FadeIn } from "@/components/motion/fade-in";
@@ -11,7 +14,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen pb-10 md:container lg:pb-0">
       {/* Section 1 */}
-      <section className="bg-about-1 relative h-screen w-full bg-cover bg-center bg-no-repeat before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:bg-opacity-75 before:bg-dark-transparent-dark-gradient before:backdrop-blur-sm before:backdrop-brightness-75 md:max-h-[1080px]">
+      <section className="relative h-screen w-full bg-about-1 bg-cover bg-center bg-no-repeat before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:bg-opacity-75 before:bg-dark-transparent-dark-gradient before:backdrop-blur-sm before:backdrop-brightness-75 md:max-h-[1080px]">
         <div className="relative z-[2] flex h-full w-full items-center justify-center md:container md:justify-end ">
           <div className="w-full">
             <div className="container flex w-full flex-col items-center justify-center gap-2 md:h-40">
@@ -59,7 +62,7 @@ export default function AboutPage() {
 
       <section className="container flex w-full flex-col items-center bg-opacity-50 bg-white-paper bg-[length:100px_100px] bg-repeat py-12 md:flex-row md:gap-x-12">
         <FadeIn amount={0.5}>
-          <LogoAscendia className="w-32 md:w-96" />
+          <LogoAscendia className="w-32 md:w-64" />
         </FadeIn>
 
         <div className="flex flex-col">
@@ -91,6 +94,128 @@ export default function AboutPage() {
             </Link>
           </FadeIn>
         </div>
+      </section>
+
+      <section className="bg-zinc-800">
+        <div className="relative w-full bg-about-2 bg-cover bg-center bg-no-repeat py-12 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:bg-opacity-75 before:bg-dark-transparent-dark-gradient before:backdrop-blur-sm before:backdrop-brightness-75 md:max-h-[256px]">
+          <div className="relative z-[2] flex h-full w-full items-center justify-center md:container md:justify-end ">
+            <div className="w-full">
+              <div className="container flex w-full flex-col items-center justify-center gap-2 md:h-40">
+                <h2 className="text-center font-serif text-6xl font-bold tracking-wider text-bright-sun-300 md:text-8xl">
+                  <MotionText
+                    type="word"
+                    text={"Visi & Misi"}
+                    hidden={{
+                      y: 128,
+                    }}
+                    delay={0.2}
+                  />
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="container flex flex-col gap-y-6 py-12 text-zinc-200 md:flex-row md:justify-between md:gap-x-12">
+          <div className="md:flex md:w-1/2 md:max-w-[512px] md:flex-col md:justify-between">
+            <div>
+              <h3 className="font-serif text-4xl font-semibold tracking-wide text-zinc-50 md:text-6xl">
+                <MotionText
+                  type="word"
+                  text={"Visi"}
+                  hidden={{
+                    y: 64,
+                  }}
+                  amount={0.5}
+                />
+              </h3>
+
+              <FadeIn amount={0.5}>
+                <p className="mt-1 leading-6 tracking-tight md:text-lg">
+                  {
+                    "Menjadikan HIMARPL sebagai wadah pemersatu, penampung aspirasi, dan penyalur minat serta bakat mahasiswa rekayasa perangkat lunak."
+                  }
+                </p>
+              </FadeIn>
+            </div>
+
+            <FadeIn amount={1}>
+              <div className="container hidden w-full flex-col items-center place-self-end bg-opacity-50 bg-white-paper bg-[length:100px_100px] bg-repeat py-12 md:flex">
+                <OrganizationDocuments className="w-full md:max-w-80" />
+              </div>
+            </FadeIn>
+          </div>
+
+          <div className="md:w-1/2 md:max-w-[512px] ">
+            <h3 className="font-serif text-4xl font-semibold tracking-wide text-zinc-50 md:text-6xl">
+              <MotionText
+                type="word"
+                text={"Misi"}
+                hidden={{
+                  y: 64,
+                }}
+                amount={0.5}
+              />
+            </h3>
+
+            <Missions />
+          </div>
+        </div>
+
+        <FadeIn amount={1}>
+          <div className="container flex w-full flex-col items-center bg-opacity-50 bg-white-paper bg-[length:100px_100px] bg-repeat py-12 md:hidden">
+            <OrganizationDocuments className="w-full" />
+          </div>
+        </FadeIn>
+      </section>
+
+      <section>
+        <div className="container flex w-full flex-col items-center bg-opacity-50 bg-white-paper bg-[length:100px_100px] bg-repeat py-12 md:flex-row md:gap-x-12">
+          <div className="flex flex-col">
+            <h3 className="mt-4 font-serif text-4xl font-semibold tracking-wide text-blue-ribbon-600 md:text-6xl">
+              <MotionText
+                type="word"
+                text={"Struktur Organisasi"}
+                hidden={{
+                  y: 64,
+                }}
+                amount={0.5}
+                delay={0.6}
+              />
+            </h3>
+
+            <FadeIn amount={0.5} delay={1.6}>
+              <p className="mt-4 leading-6 tracking-tight md:max-w-[768px] md:text-lg">
+                {`Lembaga eksekutif di HIMARPL adalah BE HIMARPL sebagai Badan pelaksana kegiatan kemahasiswaan, sedangkan lembaga legislatif di HIMARPL adalah DP HIMARPL sebagai Dewan Perwakilan Mahasiswa`}
+              </p>
+            </FadeIn>
+
+            <FadeIn amount={0.5} delay={2.2}>
+              <div className="mt-6 flex flex-col gap-y-2 md:flex-row md:gap-x-6">
+                <Link
+                  href="/about/be"
+                  className={cn(
+                    buttonVariants({ variant: "outline" }),
+                    "w-full md:w-64",
+                  )}
+                >
+                  Badan Eksekutif
+                </Link>
+                <Link
+                  href="/about/dp"
+                  className={cn(
+                    buttonVariants({ variant: "outline" }),
+                    "w-full md:w-64",
+                  )}
+                >
+                  Dewan Perwakilan
+                </Link>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+
+        <OrganizationStructure />
       </section>
     </main>
   );
