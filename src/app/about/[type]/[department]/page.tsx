@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 
 import { ProfileCard } from "@/components/about/profile-card";
 import { Proker } from "@/components/about/proker";
+import { FadeIn } from "@/components/motion/fade-in";
 import { MotionText } from "@/components/motion/motion-text";
 import { api } from "@/trpc/server";
 
@@ -80,20 +81,34 @@ export default async function AboutDepartmentPage({
         </div>
       </section>
 
-      <div className="mt-12 flex flex-col gap-y-12 md:flex-row">
-        <section className="container space-y-2 md:px-0">
+      <div className="mt-12 flex flex-col gap-12 md:flex-row">
+        <section className="container space-y-2 md:space-y-4 md:px-0">
           <h5 className="font-serif text-3xl font-semibold tracking-wide md:text-5xl">
-            {department.name}
+            <MotionText
+              type="word"
+              text={department.name}
+              hidden={{
+                y: 64,
+              }}
+            />
           </h5>
 
-          <p className="leading-6 tracking-tight md:text-lg">
-            {department.description}
-          </p>
+          <FadeIn>
+            <p className="leading-6 tracking-tight md:text-lg">
+              {department.description}
+            </p>
+          </FadeIn>
         </section>
 
-        <section className="container space-y-2 md:px-0">
-          <h5 className="font-serif text-3xl font-semibold tracking-wide md:text-5xl">
-            Program Kerja
+        <section className="container z-[2] space-y-2 md:relative md:right-0 md:min-h-[512px] md:space-y-4 md:bg-zinc-800 md:py-12 md:text-zinc-200">
+          <h5 className="font-serif text-3xl font-semibold tracking-wide md:text-5xl md:text-bright-sun-300">
+            <MotionText
+              type="word"
+              text={"Program Kerja"}
+              hidden={{
+                y: 64,
+              }}
+            />
           </h5>
 
           <Proker list={department.programs} />
@@ -101,7 +116,7 @@ export default async function AboutDepartmentPage({
       </div>
 
       {ketua && (
-        <section className="mt-12 space-y-2 md:px-0">
+        <section className="mt-12 space-y-2 md:space-y-4 md:px-0">
           <h3 className="container font-serif text-4xl font-semibold tracking-wide md:px-0 md:text-6xl">
             <MotionText
               type="word"
@@ -131,7 +146,7 @@ export default async function AboutDepartmentPage({
       )}
 
       {staffs.length > 0 && (
-        <section className="mt-12 space-y-2 md:px-0">
+        <section className="mt-12 space-y-2 md:space-y-4 md:px-0">
           <h3 className="container font-serif text-4xl font-semibold tracking-wide md:px-0 md:text-6xl">
             <MotionText
               type="word"
