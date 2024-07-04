@@ -1,4 +1,5 @@
 import { type Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { DepartmentCard } from "@/components/about/department-card";
@@ -6,6 +7,8 @@ import { ProfileCard } from "@/components/about/profile-card";
 import { Proker } from "@/components/about/proker";
 import { FadeIn } from "@/components/motion/fade-in";
 import { MotionText } from "@/components/motion/motion-text";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { api } from "@/trpc/server";
 
 type AboutTypePageProps = {
@@ -127,6 +130,13 @@ export default async function AboutTypePage({ params }: AboutTypePageProps) {
           <p className="leading-6 tracking-tight md:text-lg">
             {pimpinanDepartment.description}
           </p>
+
+          <Link
+            href={`/about/${TYPE !== "BE" ? "be" : "dp"}`}
+            className={cn(buttonVariants(), "w-full md:w-64")}
+          >
+            {`Lihat ${TYPE !== "BE" ? "Badan Eksekutif" : "Dewan Perwakilan"}`}
+          </Link>
         </FadeIn>
 
         <FadeIn amount={0.5} className="space-y-2 md:w-1/2">
