@@ -55,11 +55,9 @@ export async function Lampiran({ type, className }: LampiranProps) {
             <DropdownMenuSeparator />
 
             {group.items.map((item) => (
-              <DropdownMenuItem key={item.id}>
-                <Link target="_blank" href={item.href}>
-                  {item.name}
-                </Link>
-              </DropdownMenuItem>
+              <Link target="_blank" href={item.href} key={item.id}>
+                <DropdownMenuItem key={item.id}>{item.name}</DropdownMenuItem>
+              </Link>
             ))}
           </DropdownMenuGroup>
         ))}

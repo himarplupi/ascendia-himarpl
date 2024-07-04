@@ -56,11 +56,9 @@ export async function OrganizationDocuments({
             <DropdownMenuSeparator />
 
             {group.items.map((item) => (
-              <DropdownMenuItem key={item.id}>
-                <Link target="_blank" href={item.href}>
-                  {item.name}
-                </Link>
-              </DropdownMenuItem>
+              <Link target="_blank" href={item.href} key={item.id}>
+                <DropdownMenuItem>{item.name}</DropdownMenuItem>
+              </Link>
             ))}
           </DropdownMenuGroup>
         ))}
