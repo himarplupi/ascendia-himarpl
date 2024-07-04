@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { History } from "@/components/about/history";
-import Missions from "@/components/about/missions";
+import { Missions } from "@/components/about/missions";
 import { OrganizationDocuments } from "@/components/about/organization-documents";
 import { OrganizationStructure } from "@/components/about/organization-structure";
 import { LogoAscendia } from "@/components/brand/logo-ascendia";
@@ -195,19 +195,13 @@ export default function AboutPage() {
               <div className="mt-6 flex flex-col gap-y-2 md:flex-row md:gap-x-6">
                 <Link
                   href="/about/be"
-                  className={cn(
-                    buttonVariants({ variant: "outline" }),
-                    "w-full md:w-64",
-                  )}
+                  className={cn(buttonVariants(), "w-full md:w-64")}
                 >
                   Badan Eksekutif
                 </Link>
                 <Link
                   href="/about/dp"
-                  className={cn(
-                    buttonVariants({ variant: "outline" }),
-                    "w-full md:w-64",
-                  )}
+                  className={cn(buttonVariants(), "w-full md:w-64")}
                 >
                   Dewan Perwakilan
                 </Link>

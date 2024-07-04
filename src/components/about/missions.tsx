@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { motion, type Variants } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView, type Variants } from "framer-motion";
 
 const listAnimation: Variants = {
   hidden: {
@@ -24,12 +24,15 @@ const listAnimation: Variants = {
   },
 };
 
-export default function Missions() {
+export function Missions() {
+  const ref = useRef<HTMLUListElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+
   return (
     <motion.ul
+      ref={ref}
       initial="hidden"
-      viewport={{ once: true, amount: 1 }}
-      animate="visible"
+      animate={isInView ? "visible" : "hidden"}
       transition={{
         staggerChildren: 0.6,
       }}

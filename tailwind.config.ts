@@ -42,6 +42,8 @@ const config = {
           "linear-gradient(180deg, rgba(9, 9, 11, 0.75) 0%, rgba(9, 9, 11, 0.1875) 50%, rgba(9, 9, 11, 0.75) 100%)",
         "white-transparent-white-gradient":
           "linear-gradient(180deg, rgba(250, 250, 250, 0.45) 0%, rgba(250, 250, 250, 0.65) 100%)",
+        "profile-dark-gradient":
+          "linear-gradient(180deg, rgba(9, 9, 11, 0.5) 0%, rgba(9, 9, 11, 0) 50.08%, rgba(9, 9, 11, 0.75) 100%)",
       },
 
       fontFamily: {
