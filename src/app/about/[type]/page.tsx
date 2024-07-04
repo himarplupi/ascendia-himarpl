@@ -1,3 +1,4 @@
+import { type Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { DepartmentCard } from "@/components/about/department-card";
@@ -7,12 +8,32 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { MotionText } from "@/components/motion/motion-text";
 import { api } from "@/trpc/server";
 
-export default async function AboutBEPage() {
-  const departments = await api.department.byType("BE");
+type AboutTypePageProps = {
+  params: { type: string };
+};
+
+export async function generateMetadata({
+  params,
+}: AboutTypePageProps): Promise<Metadata> {
+  // read route params
+  const TYPE = params.type.toUpperCase() as "BE" | "DP";
+  const TITLE = TYPE === "BE" ? "Badan Eksekutif" : "Dewan Perwakilan";
+
+  return {
+    title: `${TITLE} HIMARPL`,
+    description: `Mengenal lebih dekat ${TITLE} HIMARPL, simak selengkapnya di sini!`,
+  };
+}
+
+export default async function AboutTypePage({ params }: AboutTypePageProps) {
+  const TYPE = params.type.toUpperCase() as "BE" | "DP";
+  if (TYPE !== "BE" && TYPE !== "DP") return notFound();
+
+  const departments = await api.department.byType(TYPE);
 
   const pimpinanDepartment = departments.find(
     (department) =>
-      department.acronym === "pimpinan" && department.type === "BE",
+      department.acronym === "pimpinan" && department.type === TYPE,
   );
 
   if (!pimpinanDepartment) {
@@ -21,12 +42,12 @@ export default async function AboutBEPage() {
 
   const sekretarisDepartment = departments.find(
     (department) =>
-      department.acronym === "sekretaris" && department.type === "BE",
+      department.acronym === "sekretaris" && department.type === TYPE,
   );
 
   const bendaharaDepartment = departments.find(
     (department) =>
-      department.acronym === "bendahara" && department.type === "BE",
+      department.acronym === "bendahara" && department.type === TYPE,
   );
 
   const pimpinanUsers = await api.user.byDepartment({
@@ -56,13 +77,19 @@ export default async function AboutBEPage() {
       department.acronym !== "bendahara",
   );
 
+  const TITLE = TYPE === "BE" ? "Badan Eksekutif" : "Dewan Perwakilan";
+  const DESCRIPTION =
+    TYPE === "BE"
+      ? "Badan Eksekutif bertanggung jawab untuk melaksanakan berbagai kegiatan dan program yang terkait dengan pengembangan dan peningkatan kualitas mahasiswa jurusan rekayasa perangkat lunak. Tugas utama badan eksekutif adalah mengelola dan menjalankan rencana kerja serta keputusan yang telah disepakati bersama oleh anggota himpunan. Dengan demikian, badan eksekutif memiliki peran penting dalam memastikan berjalannya kegiatan dan mencapai visi misi HIMARPL."
+      : "Dewan Perwakilan bertanggung jawab dalam memastikan bahwa kebijakan dan keputusan yang diambil oleh Badan Eksekutif sesuai dengan visi dan misi Himpunan Mahasiswa Rekayasa Perangkat Lunak. Dimana dewan perwakilan melakukan pengawasan yang mencakup evaluasi terhadap pelaksanaan program, keuangan, dan kegiatan lainnya yang dilaksanakan oleh Badan Eksekutif. Dengan demikian, dewan perwakilan berperan sebagai mekanisme kontrol internal yang membantu menjaga akuntabilitas dan transparansi dalam pengelolaan organisasi";
+
   return (
     <main className="pb-10 md:container">
       <section className="container flex h-screen max-h-[1080px] flex-col items-center justify-center md:px-0">
         <h2 className="font-serif text-6xl font-bold italic tracking-wider md:text-center md:text-8xl">
           <MotionText
             type="word"
-            text={"Badan Eksekutif"}
+            text={TITLE}
             hidden={{
               y: 128,
             }}
@@ -72,14 +99,7 @@ export default async function AboutBEPage() {
 
         <FadeIn amount={0.5} delay={0.6}>
           <p className="mt-4 leading-6 tracking-tight md:text-center md:text-lg">
-            Badan Eksekutif bertanggung jawab untuk melaksanakan berbagai
-            kegiatan dan program yang terkait dengan pengembangan dan
-            peningkatan kualitas mahasiswa jurusan rekayasa perangkat lunak.
-            Tugas utama badan eksekutif adalah mengelola dan menjalankan rencana
-            kerja serta keputusan yang telah disepakati bersama oleh anggota
-            himpunan. Dengan demikian, badan eksekutif memiliki peran penting
-            dalam memastikan berjalannya kegiatan dan mencapai visi misi
-            HIMARPL.
+            {DESCRIPTION}
           </p>
         </FadeIn>
       </section>
@@ -122,7 +142,7 @@ export default async function AboutBEPage() {
         <h3 className="container font-serif text-4xl font-semibold tracking-wide md:px-0 md:text-6xl">
           <MotionText
             type="word"
-            text={"Departemen Badan Eksekutif"}
+            text={"Departemen " + TITLE}
             hidden={{
               y: 128,
             }}

@@ -27,8 +27,8 @@ export function ProfileCard({
   github,
 }: ProfileCardProps) {
   return (
-    <div className="flex w-full flex-col md:flex-row">
-      <div className="relative flex h-96 w-full items-center justify-end before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:bg-opacity-25 before:bg-profile-dark-gradient before:backdrop-blur-sm md:rounded-lg">
+    <div className="flex w-full flex-col overflow-hidden md:flex-row md:rounded-lg">
+      <div className="relative flex h-96 w-full items-center justify-end before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:bg-opacity-25 before:bg-profile-dark-gradient before:backdrop-blur-sm">
         <Image
           src={image ?? ""}
           alt={name + " background profile picture"}
