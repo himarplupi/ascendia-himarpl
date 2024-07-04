@@ -22,7 +22,7 @@ export function DepartmentCard({
   return (
     <FadeIn className="w-full">
       <div className="flex w-full flex-col items-center justify-center">
-        <div className="relative h-64 w-full overflow-hidden bg-cover bg-center bg-no-repeat before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:bg-opacity-75 before:bg-dark-transparent-dark-gradient md:h-80 md:rounded-lg">
+        <div className="relative h-64 w-full overflow-hidden before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:bg-opacity-75 before:bg-dark-transparent-dark-gradient md:h-80 md:rounded-lg">
           <Image
             fill
             src={image ?? ""}

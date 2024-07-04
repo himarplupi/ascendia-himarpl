@@ -68,11 +68,12 @@ export function ProfileCard({
                   target="_blank"
                   href={`https://instagram.com/${instagram}`}
                   className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    "text-zinc-100",
+                    buttonVariants({ variant: "ghost-invert", size: "icon" }),
                   )}
                 >
                   {/* @ts-expect-error: Entahlah SimpleIcon gaje */}
-                  <SiInstagram className="h-6 w-6 text-zinc-100" />
+                  <SiInstagram className="h-6 w-6" />
                 </Link>
               ) : (
                 <Button variant="ghost" size="icon" disabled>
@@ -85,11 +86,12 @@ export function ProfileCard({
                   target="_blank"
                   href={`https://github.com/${instagram}`}
                   className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    "text-zinc-100",
+                    buttonVariants({ variant: "ghost-invert", size: "icon" }),
                   )}
                 >
                   {/* @ts-expect-error: Entahlah SimpleIcon gaje */}
-                  <SiGithub className="h-6 w-6 text-zinc-100" />
+                  <SiGithub className="h-6 w-6" />
                 </Link>
               ) : (
                 <Button variant="ghost" size="icon" disabled>
@@ -102,10 +104,11 @@ export function ProfileCard({
                   target="_blank"
                   href={`https://blog.himarpl.com/@${username}`}
                   className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    "text-zinc-100",
+                    buttonVariants({ variant: "ghost-invert", size: "icon" }),
                   )}
                 >
-                  <UserCircle2Icon className="h-6 w-6 text-zinc-100" />
+                  <UserCircle2Icon className="h-6 w-6" />
                 </Link>
               ) : (
                 <Button variant="ghost" size="icon" disabled>

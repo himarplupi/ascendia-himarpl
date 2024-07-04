@@ -13,6 +13,13 @@ export const departmentRouter = createTRPCRouter({
             type: input.type,
           },
         },
+        include: {
+          users: {
+            include: {
+              socialMedia: true,
+            },
+          },
+        },
       });
     }),
   byType: publicProcedure
