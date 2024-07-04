@@ -1,7 +1,5 @@
 "use client";
 
-import Autoplay from "embla-carousel-autoplay";
-
 import { LogoKabinet } from "@/components/about/logo-kabinet";
 import {
   Carousel,
@@ -16,11 +14,6 @@ export function History() {
         align: "center",
       }}
       className="w-full"
-      plugins={[
-        Autoplay({
-          delay: 4000,
-        }),
-      ]}
     >
       <CarouselContent className="-ml-4">
         <CarouselItem className="flex flex-col items-center justify-center pl-4 md:basis-1/2 lg:basis-1/4">
