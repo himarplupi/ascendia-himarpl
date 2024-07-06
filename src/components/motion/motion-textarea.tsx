@@ -35,7 +35,7 @@ const MotionTextArea = React.forwardRef<
     <div className="relative overflow-hidden">
       <motion.textarea
         className={cn(
-          "h-32 bg-transparent font-serif text-2xl leading-6 tracking-tight placeholder:text-muted-foreground focus-visible:outline-none md:text-lg",
+          "h-32 bg-transparent font-serif text-2xl leading-6 tracking-tight placeholder:text-muted-foreground focus-visible:outline-none md:text-4xl",
           className,
         )}
         ref={ref}

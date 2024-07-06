@@ -36,7 +36,7 @@ const MotionInput = React.forwardRef<
       <motion.input
         type={type}
         className={cn(
-          "h-10 bg-transparent font-serif text-2xl leading-6 tracking-tight placeholder:text-muted-foreground focus-visible:outline-none md:text-lg",
+          "h-10 bg-transparent font-serif text-2xl leading-6 tracking-tight placeholder:text-muted-foreground focus-visible:outline-none md:text-4xl",
           className,
         )}
         ref={ref}

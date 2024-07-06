@@ -109,7 +109,7 @@ export function MotionText({
                   >
                     {word}
                     {j !== line.split(" ").length - 1 && (
-                      <span className="inline-block">&nbsp;</span>
+                      <span className="inline">&nbsp;</span>
                     )}
                   </motion.span>
                 </span>

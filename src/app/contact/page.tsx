@@ -2,7 +2,7 @@ import { Form } from "@/components/contact/form";
 
 export default function ContactPage() {
   return (
-    <main>
+    <main className="md:container">
       <Form />
     </main>
   );

@@ -75,34 +75,38 @@ export function Form() {
   }, [name]);
 
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-between overflow-hidden">
+    <section className="relative flex h-screen max-h-[768px] flex-col items-center justify-between overflow-hidden">
       <Photo step={step} />
 
       <form
         target="_blank"
-        action="https://formsubmit.co/8d3c0884af2f04a9fcdc5db85ca20543"
+        action="https://formsubmit.co/5450873b6b6436729ee7a094d8e88f98"
         method="POST"
       >
+        <Photo step={step} isMobile={false} />
+
         {/* Step 0: Header */}
         <motion.div
           initial="visible"
           animate={step === 0 ? "visible" : "hidden"}
           variants={headerVariants}
-          className="container absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-end bg-zinc-800 pb-12 text-zinc-50"
+          className="container absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-end bg-zinc-800 pb-12 pt-64 text-zinc-50 md:flex-row md:items-end md:gap-x-12"
         >
-          <h2 className="font-serif text-6xl font-bold uppercase italic tracking-wider md:text-8xl">
-            <MotionText
-              type="word"
-              text={"HUBUNGI KAMI"}
-              hidden={{
-                y: 128,
-              }}
-              delay={0.2}
-            />
-          </h2>
+          <div className="">
+            <h2 className="font-serif text-6xl font-bold uppercase italic tracking-wider md:text-8xl">
+              <MotionText
+                type="word"
+                text={"HUBUNGI KAMI"}
+                hidden={{
+                  y: 128,
+                }}
+                delay={0.2}
+              />
+            </h2>
+          </div>
 
           <FadeIn amount={0.5} className="space-y-6">
-            <p className="mt-2 leading-6 tracking-tight md:text-lg">
+            <p className="mt-2 leading-6 tracking-tight md:bg-zinc-50 md:p-6 md:text-lg md:text-zinc-800">
               Jika Anda memiliki pertanyaan, masukan, atau ingin mengetahui
               lebih lanjut tentang layanan kami, jangan ragu untuk menghubungi
               kami.
@@ -126,7 +130,7 @@ export function Form() {
           initial="hidden"
           animate={step > 1 ? "exit" : step === 1 ? "visible" : "hidden"}
           variants={inputVariants}
-          className="container absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-between pb-12 pt-80"
+          className="container absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-between pb-12 pt-80 md:right-auto md:w-1/2 md:pt-32"
         >
           <div>
             <p className="leading-6 tracking-tight md:text-lg">
@@ -150,7 +154,7 @@ export function Form() {
               </Button>
             </div>
           </div>
-          <div>
+          <div className="md:space-y-6">
             <label htmlFor="email-input">
               <h3 className="font-serif text-5xl font-semibold italic tracking-wide md:text-7xl">
                 <span className="text-blue-ribbon-600">Email</span>
@@ -158,7 +162,7 @@ export function Form() {
               </h3>
             </label>
 
-            <div className="mt-2 space-y-6">
+            <div className="mt-2 space-y-6 md:mt-0 md:space-y-12">
               <MotionInput
                 id="email-input"
                 name="email"
@@ -167,11 +171,12 @@ export function Form() {
                 className="text-blue-ribbon-600"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                autoComplete="off"
               />
 
               <Button
                 variant="outline"
-                className="w-full"
+                className="w-full max-w-80"
                 disabled={!isValidateEmail}
                 onClick={() => {
                   setStep((prev) => prev + 1);
@@ -189,7 +194,7 @@ export function Form() {
           initial="hidden"
           animate={step > 2 ? "exit" : step === 2 ? "visible" : "hidden"}
           variants={inputVariants}
-          className="container absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-between bg-bright-sun-50 pb-12 pt-80"
+          className="container absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-between bg-bright-sun-50 pb-12 pt-80 md:right-auto md:w-1/2 md:pt-32"
         >
           <div>
             <p className="leading-6 tracking-tight md:text-lg">
@@ -213,7 +218,7 @@ export function Form() {
               </Button>
             </div>
           </div>
-          <div>
+          <div className="md:space-y-6">
             <label htmlFor="name-input">
               <h3 className="font-serif text-5xl font-semibold italic tracking-wide md:text-7xl">
                 <span className="text-bright-sun-500">Nama</span>
@@ -221,7 +226,7 @@ export function Form() {
               </h3>
             </label>
 
-            <div className="mt-2 space-y-6">
+            <div className="mt-2 space-y-6 md:mt-0 md:space-y-12">
               <MotionInput
                 id="name-input"
                 name="name"
@@ -230,11 +235,12 @@ export function Form() {
                 className="text-bright-sun-500"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                autoComplete="off"
               />
 
               <Button
                 variant="outline"
-                className="w-full"
+                className="w-full max-w-80"
                 disabled={!isValidateName}
                 onClick={() => {
                   setStep((prev) => prev + 1);
@@ -252,7 +258,7 @@ export function Form() {
           initial="hidden"
           animate={step > 3 ? "exit" : step === 3 ? "visible" : "hidden"}
           variants={inputVariants}
-          className="container absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-between pb-12 pt-80"
+          className="container absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-between pb-12 pt-80 md:right-auto md:w-1/2 md:pt-32"
         >
           <div>
             <p className="leading-6 tracking-tight md:text-lg">
@@ -276,14 +282,14 @@ export function Form() {
               </Button>
             </div>
           </div>
-          <div>
+          <div className="md:space-y-6">
             <label htmlFor="pesan-input">
               <h3 className="font-serif text-5xl font-semibold italic tracking-wide md:text-7xl">
                 Pesan
               </h3>
             </label>
 
-            <div className="mt-2 space-y-6">
+            <div className="mt-2 space-y-6 md:mt-0 md:space-y-12">
               <MotionTextArea
                 id="pesan-input"
                 name="pesan"
@@ -294,7 +300,7 @@ export function Form() {
               />
 
               <Button
-                className="w-full"
+                className="w-full max-w-80"
                 disabled={pesan.length === 0}
                 onClick={() => {
                   setStep(0);
@@ -361,10 +367,125 @@ const photoVariants: Variants = {
     },
   },
 };
+const photoDesktopVariants: Variants = {
+  "step-0": {
+    zIndex: 1,
+    transition: {
+      type: "spring",
+      damping: 64,
+      stiffness: 100,
+    },
+  },
+  "step-1": {
+    zIndex: 1,
+    height: "100%",
+    width: "50%",
+    transition: {
+      type: "spring",
+      damping: 64,
+      stiffness: 100,
+    },
+  },
+  "step-2": {
+    zIndex: 1,
+    height: "100%",
+    width: "50%",
+    transition: {
+      type: "spring",
+      damping: 64,
+      stiffness: 100,
+    },
+  },
+  "step-3": {
+    zIndex: 1,
+    height: "100%",
+    width: "50%",
+    transition: {
+      type: "spring",
+      damping: 64,
+      stiffness: 100,
+    },
+  },
+};
 
-function Photo({ step }: { step: number }) {
+const photoDesktopImgVariants: Variants = {
+  "step-0": {
+    y: "-80%",
+    x: "0%",
+    scale: 2,
+    originX: 0,
+    originY: 0,
+    transition: {
+      type: "spring",
+      damping: 64,
+      stiffness: 100,
+    },
+  },
+  "step-1": {
+    y: "-25%",
+    x: "0%",
+    scale: 2.5,
+    originX: 0,
+    originY: 0,
+    transition: {
+      type: "spring",
+      damping: 64,
+      stiffness: 100,
+    },
+  },
+  "step-2": {
+    y: "-40%",
+    x: "-190%",
+    scale: 3,
+    originX: 0,
+    originY: 0,
+    transition: {
+      type: "spring",
+      damping: 64,
+      stiffness: 100,
+    },
+  },
+  "step-3": {
+    y: "-25%",
+    x: "-60%",
+    scale: 2.5,
+    originX: 0,
+    originY: 0,
+    transition: {
+      type: "spring",
+      damping: 64,
+      stiffness: 100,
+    },
+  },
+};
+
+function Photo({
+  step,
+  isMobile = true,
+}: {
+  step: number;
+  isMobile?: boolean;
+}) {
+  if (!isMobile) {
+    return (
+      <motion.div
+        className="absolute right-0 top-0 mt-16 h-[300px] w-[768px] overflow-hidden before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:bg-opacity-75 before:bg-dark-transparent-dark-gradient"
+        initial="step-0"
+        animate={`step-${step}`}
+        variants={photoDesktopVariants}
+      >
+        <motion.div
+          initial="step-0"
+          animate={`step-${step}`}
+          variants={photoDesktopImgVariants}
+          className="absolute h-full w-full bg-home-1 bg-contain bg-no-repeat"
+        />
+      </motion.div>
+    );
+  }
+
   return (
-    <div className="relative z-[1] mt-16 h-48 w-full overflow-hidden">
+    <div className="relative z-[1] mt-16 h-48 w-full overflow-hidden md:hidden">
       <motion.div
         initial="step-0"
         animate={`step-${step}`}
