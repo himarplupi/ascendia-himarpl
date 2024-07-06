@@ -3,10 +3,10 @@ import localFont from "next/font/local";
 
 import { Navbar } from "@/components/common";
 import { LenisSmoothScroll } from "@/components/common";
+import { CSPostHogProvider } from "@/components/posthog-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import { TRPCReactProvider } from "@/trpc/react";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 import "@/styles/globals.css";
 
@@ -96,30 +96,28 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="id">
-      <GoogleTagManager gtmId="G-BGJQJGNW91" />
-
-      <body
-        className={cn(
-          "min-h-screen font-sans antialiased",
-          fontSans.variable,
-          fontSerif.variable,
-        )}
-      >
-        <TRPCReactProvider>
-          <ThemeProvider
-            forcedTheme="light"
-            attribute="class"
-            defaultTheme="light"
-          >
-            <LenisSmoothScroll root>
-              <Navbar />
-              {children}
-            </LenisSmoothScroll>
-          </ThemeProvider>
-        </TRPCReactProvider>
-      </body>
-
-      <GoogleAnalytics gaId="G-BGJQJGNW91" />
+      <CSPostHogProvider>
+        <body
+          className={cn(
+            "min-h-screen font-sans antialiased",
+            fontSans.variable,
+            fontSerif.variable,
+          )}
+        >
+          <TRPCReactProvider>
+            <ThemeProvider
+              forcedTheme="light"
+              attribute="class"
+              defaultTheme="light"
+            >
+              <LenisSmoothScroll root>
+                <Navbar />
+                {children}
+              </LenisSmoothScroll>
+            </ThemeProvider>
+          </TRPCReactProvider>
+        </body>
+      </CSPostHogProvider>
     </html>
   );
 }
