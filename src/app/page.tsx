@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { LogoAscendia } from "@/components/brand/logo-ascendia";
+import { Footer } from "@/components/common";
 import { GlobalFooter } from "@/components/common/global-footer";
 import { HorizontalScrollText } from "@/components/common/horizontal-scroll-text";
 import { FadeIn } from "@/components/motion/fade-in";
@@ -17,7 +18,7 @@ export default async function Home() {
   return (
     <>
       <main className="min-h-screen md:container">
-        <section className="max-h-[1080px] min-h-[100vh]  w-full space-y-6 pb-12">
+        <section className="h-[100vh] max-h-[1080px] min-h-[740px]  w-full space-y-6 pb-12">
           <div className="h-96 w-full bg-home-1 bg-cover bg-center md:bg-[center_70%]" />
 
           <div className="container">
@@ -169,95 +170,98 @@ export default async function Home() {
             Baleg ● Burta ● Komisi ●
           </HorizontalScrollText>
         </FadeIn>
+
+        {news.length > 2 && (
+          <section className="container mb-12 flex flex-col items-center gap-y-4 md:px-0 lg:gap-y-6">
+            <h2 className="mt-4 text-center font-serif text-4xl font-bold capitalize italic tracking-wide md:text-6xl">
+              <MotionText
+                type="word"
+                text={"Berita"}
+                hidden={{
+                  y: 118,
+                }}
+                delay={0.5}
+              />
+            </h2>
+
+            <ul className="grid w-full gap-6 md:grid-cols-2 md:justify-items-center md:gap-y-12 lg:grid-cols-3">
+              {news.map((news) => (
+                <li key={news?.id}>
+                  <NewsCard news={news} />
+                </li>
+              ))}
+            </ul>
+
+            <FadeIn
+              amount={0.5}
+              delay={2.4}
+              className="flex w-full justify-center"
+            >
+              <Link
+                className={cn(
+                  buttonVariants({
+                    variant: "outline",
+                  }),
+                  "w-full md:w-fit",
+                )}
+                href="/news"
+              >
+                Lihat Berita Lainnya
+              </Link>
+            </FadeIn>
+          </section>
+        )}
+
+        <section className="container flex w-full flex-col items-center bg-opacity-50 bg-white-paper bg-[length:100px_100px] bg-repeat py-12 md:flex-row md:gap-x-12">
+          <FadeIn amount={0.5}>
+            <LogoAscendia className="w-32 md:w-64" />
+          </FadeIn>
+
+          <div className="flex flex-col">
+            <h3 className="mt-4 text-center font-serif text-4xl font-semibold tracking-wide text-blue-ribbon-600 md:text-left md:text-6xl">
+              <MotionText
+                type="word"
+                text={"Kabinet Ascendia"}
+                hidden={{
+                  y: 64,
+                }}
+                amount={0.5}
+                delay={0.6}
+              />
+            </h3>
+
+            <FadeIn amount={0.5} delay={1.6}>
+              <p className="mt-4 text-center leading-6 tracking-tight md:text-left md:text-lg">
+                {`Kabinet Ascendia merupakan nama untuk kabinet HIMARPL tahun ini. Nama Ascendia ini mencerminkan harapan HIMARPL untuk terus naik hingga menjadi yang terbaik.`}
+              </p>
+            </FadeIn>
+
+            <FadeIn
+              amount={0.5}
+              delay={2.2}
+              className="mt-6 flex flex-col gap-y-3 md:flex-row md:gap-x-6"
+            >
+              <Link
+                href="/about/be"
+                className={cn(buttonVariants({}), "w-full md:w-64")}
+              >
+                Pengurus Badan Eksekutif
+              </Link>
+              <Link
+                href="/about/dp"
+                className={cn(buttonVariants({}), "w-full md:w-64")}
+              >
+                Pengurus Dewan Perwakilan
+              </Link>
+            </FadeIn>
+          </div>
+        </section>
       </main>
 
-      {news.length > 2 && (
-        <section className="container mb-12 flex flex-col items-center gap-y-4 md:px-0 lg:gap-y-6">
-          <h2 className="mt-4 text-center font-serif text-4xl font-bold capitalize italic tracking-wide md:text-6xl">
-            <MotionText
-              type="word"
-              text={"Berita"}
-              hidden={{
-                y: 118,
-              }}
-              delay={0.5}
-            />
-          </h2>
-
-          <ul className="grid w-full gap-6 md:grid-cols-2 md:justify-items-center md:gap-y-12 lg:grid-cols-3">
-            {news.map((news) => (
-              <li key={news?.id}>
-                <NewsCard news={news} />
-              </li>
-            ))}
-          </ul>
-
-          <FadeIn
-            amount={0.5}
-            delay={2.4}
-            className="flex w-full justify-center"
-          >
-            <Link
-              className={cn(
-                buttonVariants({
-                  variant: "outline",
-                }),
-                "w-full md:w-fit",
-              )}
-              href="/news"
-            >
-              Lihat Berita Lainnya
-            </Link>
-          </FadeIn>
-        </section>
-      )}
-
-      <section className="container flex w-full flex-col items-center bg-opacity-50 bg-white-paper bg-[length:100px_100px] bg-repeat py-12 md:flex-row md:gap-x-12">
-        <FadeIn amount={0.5}>
-          <LogoAscendia className="w-32 md:w-64" />
-        </FadeIn>
-
-        <div className="flex flex-col">
-          <h3 className="mt-4 text-center font-serif text-4xl font-semibold tracking-wide text-blue-ribbon-600 md:text-left md:text-6xl">
-            <MotionText
-              type="word"
-              text={"Kabinet Ascendia"}
-              hidden={{
-                y: 64,
-              }}
-              amount={0.5}
-              delay={0.6}
-            />
-          </h3>
-
-          <FadeIn amount={0.5} delay={1.6}>
-            <p className="mt-4 text-center leading-6 tracking-tight md:text-left md:text-lg">
-              {`Kabinet Ascendia merupakan nama untuk kabinet HIMARPL tahun ini. Nama Ascendia ini mencerminkan harapan HIMARPL untuk terus naik hingga menjadi yang terbaik.`}
-            </p>
-          </FadeIn>
-
-          <FadeIn
-            amount={0.5}
-            delay={2.2}
-            className="mt-6 flex flex-col gap-y-3 md:flex-row md:gap-x-6"
-          >
-            <Link
-              href="/about/be"
-              className={cn(buttonVariants({}), "w-full md:w-64")}
-            >
-              Pengurus Badan Eksekutif
-            </Link>
-            <Link
-              href="/about/dp"
-              className={cn(buttonVariants({}), "w-full md:w-64")}
-            >
-              Pengurus Dewan Perwakilan
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
-
-      <GlobalFooter />
+      <div className="md:container">
+        <Footer />
+        <GlobalFooter />
+      </div>
     </>
   );
 }

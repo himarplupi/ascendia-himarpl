@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { GlobalFooter } from "@/components/common";
+import { Footer, GlobalFooter } from "@/components/common";
 
 export const metadata: Metadata = {
   title: "Tentang HIMARPL",
@@ -18,6 +18,7 @@ export default function AboutLayout({
       {children}
 
       <div className="md:container">
+        <Footer />
         <GlobalFooter />
       </div>
     </>
