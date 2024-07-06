@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FadeIn } from "@/components/motion/fade-in";
 import { MotionText } from "@/components/motion/motion-text";
 import { UnderlineHover } from "@/components/motion/underline-hover";
+import { NewsCard } from "@/components/news/news-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { buttonVariants } from "@/components/ui/button";
 import { abbreviation, cn, momentId } from "@/lib/utils";
@@ -175,78 +176,18 @@ export default async function NewsPage() {
           <ul className="grid w-full gap-6 md:grid-cols-2 md:justify-items-center md:gap-y-12 lg:grid-cols-3">
             {filteredNews.map((news) => (
               <li key={news?.id}>
-                <div className="flex flex-col gap-y-2">
-                  <FadeIn amount={0.5}>
-                    <div className="relative aspect-video w-full">
-                      <Image
-                        src={news?.image ?? ""}
-                        alt={`${news?.metaTitle} thumbnail`}
-                        layout="fill"
-                        objectFit="cover"
-                        className="object-cover"
-                      />
-                    </div>
-                  </FadeIn>
-
-                  <FadeIn amount={0.5} delay={0.6}>
-                    <div className="flex items-center gap-x-1 md:gap-x-4">
-                      <Avatar>
-                        <AvatarImage
-                          src={news?.author.image ?? ""}
-                          alt={`${news?.author.name} profile picture`}
-                          className="scale-125 object-cover object-center"
-                        />
-                        <AvatarFallback>
-                          {abbreviation(news?.author.name)}
-                        </AvatarFallback>
-                      </Avatar>
-
-                      <h4 className="flex gap-x-2 text-sm font-medium tracking-tight text-zinc-700">
-                        <span>
-                          <Link
-                            href={`https://blog.himarpl.com/@${news?.author.username}`}
-                          >
-                            <UnderlineHover className="h-[2px] bg-zinc-600">
-                              {news?.author.name}
-                            </UnderlineHover>
-                          </Link>
-                        </span>
-                        <span>●</span>
-                        <span>{momentId(news?.publishedAt).fromNow()}</span>
-                      </h4>
-                    </div>
-                  </FadeIn>
-
-                  <h3 className="line-clamp-2 font-serif text-3xl font-semibold tracking-wide md:text-5xl ">
-                    <Link
-                      href={`https://blog.himarpl.com/@${news?.author.username}/${news?.slug}`}
-                    >
-                      <UnderlineHover className="bg-zinc-800">
-                        <MotionText
-                          amount={0.5}
-                          type="word"
-                          className="inline-block"
-                          text={news?.title ?? "Tidak ada judul"}
-                          delay={1.6}
-                          hidden={{
-                            y: 64,
-                          }}
-                        />
-                      </UnderlineHover>
-                    </Link>
-                  </h3>
-                </div>
+                <NewsCard news={news} />
               </li>
             ))}
           </ul>
 
-          <FadeIn amount={0.5} delay={2.4}>
+          <FadeIn amount={0.5} delay={2.4} className="w-full">
             <Link
               className={cn(
                 buttonVariants({
                   variant: "outline",
                 }),
-                "mt-8 w-full md:w-fit",
+                "w-full md:w-fit",
               )}
               href="https://blog.himarpl.com/tag/berita"
             >
