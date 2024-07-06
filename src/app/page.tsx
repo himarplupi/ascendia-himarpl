@@ -17,12 +17,18 @@ export default async function Home() {
   return (
     <>
       <main className="min-h-screen md:container">
-        <section className="h-screen max-h-[768px] min-h-[768px] w-full space-y-6 pb-12">
+        <section className="max-h-[1080px] min-h-[100vh]  w-full space-y-6 pb-12">
           <div className="h-96 w-full bg-home-1 bg-cover bg-center md:bg-[center_70%]" />
 
           <div className="container">
-            <h3 className="font-serif text-4xl font-bold tracking-wider md:text-9xl">
-              <MotionText text="Wujud " type="word" />
+            <h3 className="font-serif text-3xl font-semibold tracking-wide md:text-6xl lg:text-8xl">
+              <MotionText
+                text="Wujud "
+                type="word"
+                hidden={{
+                  y: 124,
+                }}
+              />
               <WordRotate
                 words={[
                   "Kebersamaan",
@@ -36,11 +42,17 @@ export default async function Home() {
                 className="inline-block text-blue-ribbon-600"
               />
             </h3>
-            <h4 className="mt-2 font-serif text-3xl font-semibold tracking-wide md:text-6xl">
-              <MotionText text="Kami, Mahasiswa RPL" type="word" />
-            </h4>
+            <h3 className="mt-2 font-serif text-3xl font-semibold tracking-wide md:text-6xl">
+              <MotionText
+                text="Kami, Mahasiswa RPL"
+                type="word"
+                hidden={{
+                  y: 64,
+                }}
+              />
+            </h3>
 
-            <div className="mt-6 flex flex-col gap-y-3 md:flex-row md:gap-x-6">
+            <div className="mt-6 flex flex-col gap-y-3 sm:flex-row sm:gap-x-6">
               <Link
                 href="/dedication"
                 className={cn(buttonVariants(), "w-full max-w-80")}
@@ -160,7 +172,7 @@ export default async function Home() {
       </main>
 
       {news.length > 2 && (
-        <section className="container flex flex-col items-center gap-y-4 md:px-0 lg:gap-y-6">
+        <section className="container mb-12 flex flex-col items-center gap-y-4 md:px-0 lg:gap-y-6">
           <h2 className="mt-4 text-center font-serif text-4xl font-bold capitalize italic tracking-wide md:text-6xl">
             <MotionText
               type="word"
@@ -200,7 +212,7 @@ export default async function Home() {
         </section>
       )}
 
-      <section className="container mt-12 flex w-full flex-col items-center bg-opacity-50 bg-white-paper bg-[length:100px_100px] bg-repeat py-12 md:flex-row md:gap-x-12">
+      <section className="container flex w-full flex-col items-center bg-opacity-50 bg-white-paper bg-[length:100px_100px] bg-repeat py-12 md:flex-row md:gap-x-12">
         <FadeIn amount={0.5}>
           <LogoAscendia className="w-32 md:w-64" />
         </FadeIn>
