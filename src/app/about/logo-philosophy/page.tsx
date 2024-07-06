@@ -1,4 +1,10 @@
 import {
+  LogoAscendiaGaruda,
+  LogoAscendiaGear,
+  LogoAscendiaNetwork,
+  LogoAscendiaWing,
+} from "@/components/logo-philosophy/logo-ascendia";
+import {
   LogoHIMARPLBase,
   LogoHIMARPLConnection,
   LogoHIMARPLDevice,
@@ -21,7 +27,7 @@ export default function LogoPhilosophyPage() {
           />
         </h2>
 
-        <div className="flex max-w-[1080px] flex-col items-center md:flex-row md:gap-x-6 lg:gap-x-12">
+        <div className="flex flex-col items-center gap-y-6 md:flex-row md:gap-x-6 lg:w-[1080px] lg:gap-x-12">
           <FadeIn delay={0.6} className="w-fit">
             <LogoHIMARPLBase />
           </FadeIn>
@@ -35,7 +41,7 @@ export default function LogoPhilosophyPage() {
           </FadeIn>
         </div>
 
-        <div className="flex max-w-[1080px] flex-col items-center md:flex-row md:gap-x-6 lg:gap-x-12">
+        <div className="flex flex-col items-center gap-y-6 md:flex-row md:gap-x-6 lg:w-[1080px] lg:gap-x-12">
           <FadeIn className="w-fit">
             <LogoHIMARPLHexagon />
           </FadeIn>
@@ -49,7 +55,7 @@ export default function LogoPhilosophyPage() {
             </p>
           </FadeIn>
         </div>
-        <div className="flex max-w-[1080px] flex-col items-center md:flex-row md:gap-x-6 lg:gap-x-12">
+        <div className="flex flex-col items-center gap-y-6 md:flex-row md:gap-x-6 lg:w-[1080px] lg:gap-x-12">
           <FadeIn className="w-fit">
             <LogoHIMARPLConnection />
           </FadeIn>
@@ -62,7 +68,7 @@ export default function LogoPhilosophyPage() {
             </p>
           </FadeIn>
         </div>
-        <div className="flex max-w-[1080px] flex-col items-center md:flex-row md:gap-x-6 lg:gap-x-12">
+        <div className="flex flex-col items-center gap-y-6 md:flex-row md:gap-x-6 lg:w-[1080px] lg:gap-x-12">
           <FadeIn className="w-fit">
             <LogoHIMARPLDevice />
           </FadeIn>
@@ -73,6 +79,67 @@ export default function LogoPhilosophyPage() {
               landasan, yaitu hubungan, kerja sama, dan keterkaitan. Dimana
               ketiga landasan tersebut menjadi pondasi awal dalam meraih
               keberhasilan.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      <section className="mt-32 flex flex-col items-center justify-center gap-y-12 lg:gap-y-24">
+        <h2 className="text-center font-serif text-6xl font-bold tracking-wider md:text-8xl">
+          <MotionText
+            type="word"
+            text={"Filosofi Logo Kabinet Ascendia"}
+            hidden={{
+              y: 128,
+            }}
+          />
+        </h2>
+
+        <div className="flex flex-col items-center gap-y-6 md:flex-row md:gap-x-6 lg:w-[1080px] lg:gap-x-12">
+          <FadeIn className="w-fit">
+            <LogoAscendiaGear />
+          </FadeIn>
+
+          <FadeIn>
+            <p className="leading-6 tracking-tight md:text-lg">
+              Roda gigi sebagai simbol untuk terus berkembang menjadi yang
+              terbaik.
+            </p>
+          </FadeIn>
+        </div>
+
+        <div className="flex flex-col items-center gap-y-6 md:flex-row md:gap-x-6 lg:w-[1080px] lg:gap-x-12">
+          <FadeIn className="w-fit">
+            <LogoAscendiaNetwork />
+          </FadeIn>
+
+          <FadeIn>
+            <p className="leading-6 tracking-tight md:text-lg">
+              Sinyal melambangkan komunikasi dan interaksi untuk mencapai
+              kesuksesan.
+            </p>
+          </FadeIn>
+        </div>
+        <div className="flex flex-col items-center gap-y-6 md:flex-row md:gap-x-6 lg:w-[1080px] lg:gap-x-12">
+          <FadeIn className="w-fit">
+            <LogoAscendiaWing />
+          </FadeIn>
+
+          <FadeIn>
+            <p className="leading-6 tracking-tight md:text-lg">
+              Sayap melambangkan harapan dan cita-cita yang tinggi.
+            </p>
+          </FadeIn>
+        </div>
+
+        <div className="flex flex-col items-center gap-y-6 md:flex-row md:gap-x-6 lg:w-[1080px] lg:gap-x-12">
+          <FadeIn className="w-fit">
+            <LogoAscendiaGaruda />
+          </FadeIn>
+
+          <FadeIn>
+            <p className="leading-6 tracking-tight md:text-lg">
+              Garuda melambangkan kekuatan, pengetahuan, dan kedisiplinan.
             </p>
           </FadeIn>
         </div>

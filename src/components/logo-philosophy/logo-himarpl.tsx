@@ -24,7 +24,7 @@ export function LogoHIMARPLBase({
       variants={{
         "gray-scale": {
           filter: "grayscale(100%)",
-          opacity: 0.5,
+          opacity: 0.25,
           transition: {
             type: "spring",
             damping: 32,
