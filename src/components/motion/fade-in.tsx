@@ -15,6 +15,7 @@ type MotionTextProps = {
   amount?: number;
   children: React.ReactNode;
   className?: string;
+  margin?: string;
 };
 
 export function FadeIn({
@@ -24,8 +25,15 @@ export function FadeIn({
   amount = 1,
   children,
   className,
+  margin,
 }: MotionTextProps) {
-  const { fadeInVariant, isInView, ref } = useFadeIn(delay, to, once, amount);
+  const { fadeInVariant, isInView, ref } = useFadeIn(
+    delay,
+    to,
+    once,
+    amount,
+    margin,
+  );
 
   return (
     <motion.div
@@ -40,9 +48,15 @@ export function FadeIn({
   );
 }
 
-export const useFadeIn = (delay = 0, to = "top", once = true, amount = 1) => {
+export const useFadeIn = (
+  delay = 0,
+  to = "top",
+  once = true,
+  amount = 1,
+  margin = "0px",
+) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { amount, once });
+  const isInView = useInView(ref, { amount, once, margin });
   const fadeInVariant = useCallback(() => {
     const transition: Transition = {
       type: "spring",
