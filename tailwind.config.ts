@@ -19,11 +19,63 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        "white-paper":
+          "url('https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-paper.png')",
+        "dedication-1":
+          "url('https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-dedication-1.jpg')",
+        "dedication-2":
+          "url('https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-dedication-2.png')",
+        "dedication-advo":
+          "url('https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-dedication-advo.png')",
+        "dedication-burta":
+          "url('https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-dedication-burta.png')",
+        "about-1":
+          "url('https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-about-1.png')",
+        "about-2":
+          "url('https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-about-2.png')",
+        "about-3":
+          "url('https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-about-3.png')",
+        "home-1":
+          "url('https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-home-1.png')",
+        "dark-transparent-dark-gradient":
+          "linear-gradient(180deg, rgba(9, 9, 11, 0.75) 0%, rgba(9, 9, 11, 0.1875) 50%, rgba(9, 9, 11, 0.75) 100%)",
+        "white-transparent-white-gradient":
+          "linear-gradient(180deg, rgba(250, 250, 250, 0.45) 0%, rgba(250, 250, 250, 0.65) 100%)",
+        "profile-dark-gradient":
+          "linear-gradient(180deg, rgba(9, 9, 11, 0.5) 0%, rgba(9, 9, 11, 0) 50.08%, rgba(9, 9, 11, 0.75) 100%)",
+      },
+
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         serif: ["var(--font-serif)", ...fontFamily.sans],
       },
       colors: {
+        "bright-sun": {
+          "50": "#fffbeb",
+          "100": "#fef4c7",
+          "200": "#fde88a",
+          "300": "#fbd23f",
+          "400": "#fac225",
+          "500": "#f4a20c",
+          "600": "#d87a07",
+          "700": "#b3560a",
+          "800": "#91420f",
+          "900": "#78370f",
+        },
+        "blue-ribbon": {
+          "50": "#eef4ff",
+          "100": "#d9e4ff",
+          "200": "#bcd1ff",
+          "300": "#8eb4ff",
+          "400": "#598cff",
+          "500": "#295bff",
+          "600": "#1b3ff5",
+          "700": "#142ce1",
+          "800": "#1725b6",
+          "900": "#19268f",
+          "950": "#141957",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
