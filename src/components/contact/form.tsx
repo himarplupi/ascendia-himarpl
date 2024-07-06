@@ -75,7 +75,7 @@ export function Form() {
   }, [name]);
 
   return (
-    <section className="relative flex h-screen max-h-[768px] flex-col items-center justify-between overflow-hidden">
+    <section className="relative flex h-screen max-h-[1080px] min-h-[768px] flex-col items-center justify-between overflow-hidden">
       <Photo step={step} />
 
       <form
@@ -469,7 +469,7 @@ function Photo({
   if (!isMobile) {
     return (
       <motion.div
-        className="absolute right-0 top-0 mt-16 h-[300px] w-[768px] overflow-hidden before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:bg-opacity-75 before:bg-dark-transparent-dark-gradient"
+        className="absolute right-0 top-0 mt-16 hidden h-[300px] w-[768px] overflow-hidden before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:bg-opacity-75 before:bg-dark-transparent-dark-gradient md:block"
         initial="step-0"
         animate={`step-${step}`}
         variants={photoDesktopVariants}
