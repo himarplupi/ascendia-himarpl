@@ -25,7 +25,7 @@ import {
 
 export function Navbar() {
   return (
-    <div className="fixed top-0 z-30 flex w-full justify-center bg-background shadow">
+    <div className="fixed top-0 z-30 flex w-full justify-center overflow-hidden bg-background shadow">
       <nav className="container flex items-center justify-between">
         <LogoHIMARPLLandscape />
 
