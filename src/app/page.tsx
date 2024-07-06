@@ -17,11 +17,11 @@ export default async function Home() {
   return (
     <>
       <main className="min-h-screen md:container">
-        <section className="h-screen max-h-[768px] w-full space-y-6 pb-12">
-          <div className="h-96 w-full bg-home-1 bg-cover bg-center" />
+        <section className="h-screen max-h-[768px] min-h-[768px] w-full space-y-6 pb-12">
+          <div className="h-96 w-full bg-home-1 bg-cover bg-center md:bg-[center_70%]" />
 
-          <div className="container md:px-0">
-            <h3 className="font-serif text-4xl font-bold tracking-wide md:text-6xl">
+          <div className="container">
+            <h3 className="font-serif text-4xl font-bold tracking-wider md:text-9xl">
               <MotionText text="Wujud " type="word" />
               <WordRotate
                 words={[
@@ -36,20 +36,23 @@ export default async function Home() {
                 className="inline-block text-blue-ribbon-600"
               />
             </h3>
-            <h4 className="mt-2 font-serif text-2xl font-semibold tracking-wide md:text-4xl">
+            <h4 className="mt-2 font-serif text-3xl font-semibold tracking-wide md:text-6xl">
               <MotionText text="Kami, Mahasiswa RPL" type="word" />
             </h4>
 
-            <div className="mt-6 flex flex-col gap-y-3">
+            <div className="mt-6 flex flex-col gap-y-3 md:flex-row md:gap-x-6">
               <Link
                 href="/dedication"
-                className={cn(buttonVariants(), "w-full")}
+                className={cn(buttonVariants(), "w-full max-w-80")}
               >
                 Lihat Dedikasi
               </Link>
               <Link
                 href="/contact"
-                className={cn(buttonVariants({ variant: "outline" }), "w-full")}
+                className={cn(
+                  buttonVariants({ variant: "outline" }),
+                  "w-full max-w-80",
+                )}
               >
                 Hubungi Kami
               </Link>
@@ -58,23 +61,25 @@ export default async function Home() {
         </section>
 
         <FadeIn>
-          <section className="container bg-zinc-800 py-6 text-zinc-50 md:px-0">
-            <h4 className="font-serif text-2xl font-semibold italic tracking-wide md:text-4xl">
+          <section className="container flex flex-col bg-zinc-800 py-6 text-zinc-50 md:flex-row md:gap-x-6">
+            <h4 className="mt-2 font-serif text-4xl font-semibold italic tracking-wide md:text-6xl">
               HIMARPL
             </h4>
-            <p className="mt-2 leading-6 tracking-tight md:max-w-[768px] md:text-lg">
-              adalah organisasi kemahasiswaan program studi Rekayasa Perangkat
-              Lunak Universitas Pendidikan Indonesia
-            </p>
-            <Link
-              href="/about"
-              className={cn(
-                buttonVariants({ variant: "outline" }),
-                "mt-4 w-full text-zinc-950",
-              )}
-            >
-              Mengenal HIMARPL
-            </Link>
+            <div>
+              <p className="mt-2 leading-6 tracking-tight md:max-w-[768px] md:text-lg">
+                adalah organisasi kemahasiswaan program studi Rekayasa Perangkat
+                Lunak Universitas Pendidikan Indonesia
+              </p>
+              <Link
+                href="/about"
+                className={cn(
+                  buttonVariants({ variant: "outline" }),
+                  "mt-4 w-full max-w-80 text-zinc-950",
+                )}
+              >
+                Mengenal HIMARPL
+              </Link>
+            </div>
           </section>
         </FadeIn>
 
@@ -82,7 +87,7 @@ export default async function Home() {
           <div className="lg:flex">
             <section className="container my-8 lg:w-1/2">
               <div className="flex gap-x-2 md:gap-x-8">
-                <h2 className="flex flex-col font-serif text-7xl font-bold italic tracking-wider  text-blue-ribbon-600 md:text-9xl">
+                <h2 className="flex flex-col font-serif text-7xl font-bold italic tracking-wider text-blue-ribbon-600 md:text-9xl">
                   <MotionText
                     type="word"
                     text={"Ad"}
@@ -154,7 +159,7 @@ export default async function Home() {
         </FadeIn>
       </main>
 
-      {news.length > 0 && (
+      {news.length > 2 && (
         <section className="container flex flex-col items-center gap-y-4 md:px-0 lg:gap-y-6">
           <h2 className="mt-4 text-center font-serif text-4xl font-bold capitalize italic tracking-wide md:text-6xl">
             <MotionText
