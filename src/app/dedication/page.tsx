@@ -209,7 +209,7 @@ export default function DedicationPage() {
               <FadeIn amount={0.5} delay={2.2}>
                 <Link
                   target="_blank"
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSemtkI-HpnIwRwE4VSfmO1s1S9hdIKU46wc5Ww8nHXfHaiBcw/viewform"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfGpum-Zp7UvtXizPldhjxPjLi4vUIqXzWb-L-rj02Ry1KZZQ/viewform"
                   className={cn("w-full", buttonVariants())}
                 >
                   Formulir Respiration
