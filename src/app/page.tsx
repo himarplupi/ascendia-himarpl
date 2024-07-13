@@ -184,11 +184,9 @@ export default async function Home() {
               />
             </h2>
 
-            <ul className="grid w-full gap-6 md:grid-cols-2 md:justify-items-center md:gap-y-12 lg:grid-cols-3">
+            <ul className="grid w-full items-stretch justify-items-stretch gap-6 md:grid-cols-2 md:justify-items-center md:gap-y-12 lg:grid-cols-3 ">
               {news.map((news) => (
-                <li key={news?.id}>
-                  <NewsCard news={news} />
-                </li>
+                <NewsCard key={news?.id} news={news} />
               ))}
             </ul>
 

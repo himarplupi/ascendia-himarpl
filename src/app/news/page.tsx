@@ -173,15 +173,17 @@ export default async function NewsPage() {
             />
           </h2>
 
-          <ul className="grid w-full gap-6 md:grid-cols-2 md:justify-items-center md:gap-y-12 lg:grid-cols-3">
+          <ul className="grid w-full items-stretch justify-items-stretch gap-6 md:grid-cols-2 md:justify-items-center md:gap-y-12 lg:grid-cols-3">
             {filteredNews.map((news) => (
-              <li key={news?.id}>
-                <NewsCard news={news} />
-              </li>
+              <NewsCard news={news} key={news?.id} />
             ))}
           </ul>
 
-          <FadeIn amount={0.5} delay={2.4} className="w-full">
+          <FadeIn
+            amount={0.5}
+            delay={2.4}
+            className="flex w-full items-center justify-center"
+          >
             <Link
               className={cn(
                 buttonVariants({
