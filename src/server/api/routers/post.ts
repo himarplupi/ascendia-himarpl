@@ -4,6 +4,9 @@ export const postRouter = createTRPCRouter({
   newest: publicProcedure.query(async ({ ctx }) => {
     return await ctx.db.post.findMany({
       where: {
+        publishedAt: {
+          not: null,
+        },
         tags: {
           some: {
             title: {

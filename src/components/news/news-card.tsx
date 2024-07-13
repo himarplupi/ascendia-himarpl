@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { z } from "zod";
 
 import { abbreviation, momentId } from "@/lib/utils";
 import { type AppRouter } from "@/server/api/root";
@@ -13,12 +14,19 @@ export type RouterOutputs = inferRouterOutputs<AppRouter>;
 
 type News = RouterOutputs["post"]["newest"][0];
 
+const placeholderImage =
+  "https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@main/images/no-image.jpg";
+
+const imageUrlSchema = z.string().url();
+
 export function NewsCard({ news }: { news: News }) {
+  const { success } = imageUrlSchema.safeParse(news.image);
+
   return (
     <FadeIn amount={0.5} delay={0.6} className="flex w-full flex-col gap-y-2">
       <div className="relative aspect-video w-full">
         <Image
-          src={news?.image ?? ""}
+          src={success && news?.image ? news.image : placeholderImage}
           alt={`${news?.metaTitle} thumbnail`}
           layout="fill"
           objectFit="cover"
