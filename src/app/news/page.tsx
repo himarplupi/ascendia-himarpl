@@ -35,7 +35,7 @@ export default async function NewsPage() {
             </div>
 
             <div className="container z-[2] pb-6">
-              <h2 className="line-clamp-2 font-serif text-4xl font-bold capitalize tracking-wide text-zinc-50 md:text-6xl">
+              <h2 className="overflow-hidden font-serif text-4xl font-bold capitalize tracking-wide text-zinc-50 md:text-6xl">
                 <Link
                   href={`https://blog.himarpl.com/@${latestNews.author.username}/${latestNews.slug}`}
                 >
@@ -43,7 +43,7 @@ export default async function NewsPage() {
                     <MotionText
                       type="word"
                       className="inline-block"
-                      text={latestNews?.title}
+                      text={latestNews?.title.substring(0, 80)}
                       delay={0.6}
                       hidden={{
                         y: 100,

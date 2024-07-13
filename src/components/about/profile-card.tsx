@@ -84,7 +84,7 @@ export function ProfileCard({
               {github ? (
                 <Link
                   target="_blank"
-                  href={`https://github.com/${instagram}`}
+                  href={`https://github.com/${github}`}
                   className={cn(
                     "text-zinc-100",
                     buttonVariants({ variant: "ghost-invert", size: "icon" }),
