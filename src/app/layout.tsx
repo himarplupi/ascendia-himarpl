@@ -73,19 +73,21 @@ export const metadata = {
   ],
   metadataBase: new URL("https://www.himarpl.com"),
   openGraph: {
-    title: "Blog HIMARPL",
-    description: "Tulisan-tulisan pengurus HIMARPL",
-    url: "https://blog.himarpl.com",
-    siteName: "Blog HIMARPL",
-    images: "https://blog.himarpl.com/opengraph-image.gif",
+    title: "HIMARPL",
+    description:
+      "Wujud kebersamaan, kolaborasi, dedikasi, inspirasi, inovasi, dan prestasi kami, mahasiswa RPL. HIMARPL adalah organisasi kemahasiswaan program studi Rekayasa Perangkat Lunak Universitas Pendidikan Indonesia",
+    url: "https://www.himarpl.com",
+    siteName: "HIMARPL",
+    images: "https://www.himarpl.com/opengraph-image.gif",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog HIMARPL",
-    description: "Tulisan-tulisan pengurus HIMARPL",
+    title: "HIMARPL",
+    description:
+      "Wujud kebersamaan, kolaborasi, dedikasi, inspirasi, inovasi, dan prestasi kami, mahasiswa RPL. HIMARPL adalah organisasi kemahasiswaan program studi Rekayasa Perangkat Lunak Universitas Pendidikan Indonesia",
     creator: "@himarpl",
-    images: ["https://blog.himarpl.com/twitter-image.gif"], // Must be an absolute URL
+    images: ["https://www.himarpl.com/twitter-image.gif"], // Must be an absolute URL
   },
 };
 
