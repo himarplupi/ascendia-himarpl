@@ -1,15 +1,14 @@
 import type { MetadataRoute } from "next";
 
 import { env } from "@/env";
+import { db } from "@/server/db";
 
 // This is the combination of the Application Base URL and Base PATH
 const baseUrlAndPath = `${env.BASE_URL}${env.BASE_PATH}`;
 
 const EXTERNAL_LINKS_SITEMAP = [
-  "https://pmb.himarpl.com/",
   "https://blog.himarpl.com/",
-  "https://upi.edu/",
-  "https://rpl.upi.edu/",
+  "https://pmb.himarpl.com/",
 ];
 
 // This allows us to generate a `sitemap.xml` file dynamically based on the needs of the Node.js Website
@@ -18,15 +17,56 @@ const EXTERNAL_LINKS_SITEMAP = [
 const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
   const paths: Array<string> = [];
 
-  // for (const locale of availableLocaleCodes) {
-  //   const routes = await dynamicRouter.getRoutesByLanguage(locale);
-
-  //   paths.push(
-  //     ...routes.map((route) => `${baseUrlAndPath}/${locale}/${route}`),
-  //   );
-  // }
-
   paths.push(`${baseUrlAndPath}`);
+  paths.push(`${baseUrlAndPath}/dedication`);
+  paths.push(`${baseUrlAndPath}/news`);
+  paths.push(`${baseUrlAndPath}/about`);
+  paths.push(`${baseUrlAndPath}/contact`);
+  paths.push(`${baseUrlAndPath}/about/dp`);
+  paths.push(`${baseUrlAndPath}/about/be`);
+  paths.push(`${baseUrlAndPath}/about/logo-philosophy`);
+
+  const departmentsBE = await db.department.findMany({
+    where: {
+      AND: [
+        {
+          type: "BE",
+        },
+        {
+          NOT: {
+            name: "pimpinan",
+          },
+        },
+      ],
+    },
+  });
+
+  if (departmentsBE) {
+    departmentsBE.forEach((department) => {
+      paths.push(`${baseUrlAndPath}/about/be/${department.acronym}`);
+    });
+  }
+
+  const departmentsDP = await db.department.findMany({
+    where: {
+      AND: [
+        {
+          type: "DP",
+        },
+        {
+          NOT: {
+            name: "pimpinan",
+          },
+        },
+      ],
+    },
+  });
+
+  if (departmentsDP) {
+    departmentsDP.forEach((department) => {
+      paths.push(`${baseUrlAndPath}/about/dp/${department.acronym}`);
+    });
+  }
 
   const currentDate = new Date().toISOString();
 
@@ -39,6 +79,5 @@ const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
 
 export default sitemap;
 
-// Enforces that this route is used as static rendering
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
-export const dynamic = "error";
+export const dynamic = "auto";
