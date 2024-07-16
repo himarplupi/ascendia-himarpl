@@ -4,7 +4,7 @@ import { env } from "@/env";
 import { db } from "@/server/db";
 
 // This is the combination of the Application Base URL and Base PATH
-const baseUrlAndPath = `${env.BASE_URL}${env.BASE_PATH}`;
+const baseUrlAndPath = `${env.BASE_URL}`;
 
 const EXTERNAL_LINKS_SITEMAP = [
   "https://blog.himarpl.com/",
