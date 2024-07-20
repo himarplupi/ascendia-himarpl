@@ -17,10 +17,8 @@ export default function ContactLayout({
     <>
       {children}
 
-      <div className="md:container">
-        <Footer />
-        <GlobalFooter />
-      </div>
+      <Footer />
+      <GlobalFooter />
     </>
   );
 }

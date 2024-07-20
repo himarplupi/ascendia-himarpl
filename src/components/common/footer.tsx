@@ -24,9 +24,9 @@ export function Footer() {
   )();
 
   return (
-    <footer className="container bg-secondary/50">
-      <div className="md:px-8">
-        <div className="flex flex-col justify-between gap-4 py-8 text-sm sm:flex-row sm:items-center">
+    <footer className="bg-secondary/50">
+      <div className="container">
+        <div className="flex flex-col justify-between gap-4 py-8 text-sm sm:flex-row sm:items-center md:px-8">
           <div className="space-y-3">
             <Breadcrumb>
               <BreadcrumbList>

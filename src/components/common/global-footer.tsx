@@ -22,56 +22,58 @@ export function GlobalFooter() {
   const { resolvedTheme } = useTheme();
 
   return (
-    <footer className="container bg-muted/50 pt-6">
-      <div className="flex flex-col gap-y-6 md:px-8">
-        <div className="flex flex-col items-center gap-2 sm:flex-row">
-          <Image
-            src={LogoUPICibiru}
-            alt="logo Kampus UPI di Cibiru"
-            width={150}
-          />
-          {resolvedTheme === "dark" ? (
+    <footer className="bg-muted/50 pt-6">
+      <div className="container">
+        <div className="flex flex-col gap-y-6 md:px-8">
+          <div className="flex flex-col items-center gap-2 sm:flex-row">
             <Image
-              src={LogoLandscapeHIMARPLDark}
-              alt="logo HIMARPL"
-              width={200}
-            />
-          ) : (
-            <Image
-              src={LogoLandscapeHIMARPLLight}
-              alt="logo HIMARPL"
-              width={200}
-            />
-          )}
-          {resolvedTheme === "dark" ? (
-            <Image
-              src={LogoKabinetAscendiaDark}
-              alt="logo Kabinet Ascendia Dark"
+              src={LogoUPICibiru}
+              alt="logo Kampus UPI di Cibiru"
               width={150}
             />
-          ) : (
-            <Image
-              src={LogoKabinetAscendiaLight}
-              alt="logo Kabinet Ascendia Light"
-              width={150}
-            />
-          )}
+            {resolvedTheme === "dark" ? (
+              <Image
+                src={LogoLandscapeHIMARPLDark}
+                alt="logo HIMARPL"
+                width={200}
+              />
+            ) : (
+              <Image
+                src={LogoLandscapeHIMARPLLight}
+                alt="logo HIMARPL"
+                width={200}
+              />
+            )}
+            {resolvedTheme === "dark" ? (
+              <Image
+                src={LogoKabinetAscendiaDark}
+                alt="logo Kabinet Ascendia Dark"
+                width={150}
+              />
+            ) : (
+              <Image
+                src={LogoKabinetAscendiaLight}
+                alt="logo Kabinet Ascendia Light"
+                width={150}
+              />
+            )}
+          </div>
+
+          <div className="flex flex-col justify-between gap-4 sm:flex-row">
+            <SocialMediaLinks />
+
+            <Alamat />
+
+            <Pranala />
+
+            <MediaPartner />
+          </div>
         </div>
 
-        <div className="flex flex-col justify-between gap-4 sm:flex-row">
-          <SocialMediaLinks />
-
-          <Alamat />
-
-          <Pranala />
-
-          <MediaPartner />
-        </div>
+        <p className="mt-6 rounded-lg py-6 text-center text-sm leading-5">
+          &copy; 2024 HIMARPL UPI, All rights reserved.
+        </p>
       </div>
-
-      <p className="mt-6 rounded-lg py-6 text-center text-sm leading-5">
-        &copy; 2024 HIMARPL UPI, All rights reserved.
-      </p>
     </footer>
   );
 }

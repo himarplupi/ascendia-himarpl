@@ -265,10 +265,8 @@ export default async function Home() {
         </section>
       </main>
 
-      <div className="md:container">
-        <Footer />
-        <GlobalFooter />
-      </div>
+      <Footer />
+      <GlobalFooter />
     </>
   );
 }

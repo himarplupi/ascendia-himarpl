@@ -16,10 +16,8 @@ export default function DedicationLayout({
   return (
     <>
       {children}
-      <div className="md:container">
-        <Footer />
-        <GlobalFooter />
-      </div>
+      <Footer />
+      <GlobalFooter />
     </>
   );
 }
