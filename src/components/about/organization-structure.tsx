@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 import ReactFlow, {
   Background,
   Controls,
@@ -238,6 +239,7 @@ export function OrganizationStructure() {
 }
 
 function OrganizationStructureFlow() {
+  const router = useRouter();
   return (
     <div className="h-full">
       <ReactFlow
@@ -257,6 +259,10 @@ function OrganizationStructureFlow() {
         defaultEdgeOptions={{
           animated: true,
           zIndex: -1000,
+        }}
+        onNodeClick={(_, node) => {
+          const link = getNodePageLink(node.id);
+          router.push(link);
         }}
       >
         <Background />
@@ -304,4 +310,49 @@ function LeafNode({ data }: { data: { label: string } }) {
       </div>
     </div>
   );
+}
+
+function getNodePageLink(id: string) {
+  switch (id) {
+    case "ketua-be":
+      return "/about/be";
+    case "wakil-be":
+      return "/about/be";
+    case "bendahara-be":
+      return "/about/be/bendahara";
+    case "sekretaris-be":
+      return "/about/be/sekretaris";
+    case "Adkes":
+      return "/about/be/adkes";
+    case "Advokastra":
+      return "/about/be/advokastra";
+    case "Ekraf":
+      return "/about/be/ekraf";
+    case "Keuangan":
+      return "/about/be/keuangan";
+    case "Kominfo":
+      return "/about/be/kominfo";
+    case "PD":
+      return "/about/be/pd";
+    case "PPM":
+      return "/about/be/ppm";
+    case "PSDO":
+      return "/about/be/psdo";
+    case "ketua-dp":
+      return "/about/dp";
+    case "wakil-dp":
+      return "/about/dp";
+    case "bendahara-dp":
+      return "/about/dp/bendahara";
+    case "sekretaris-dp":
+      return "/about/dp/sekretaris";
+    case "Baleg":
+      return "/about/dp/baleg";
+    case "Burta":
+      return "/about/dp/burta";
+    case "Komisi":
+      return "/about/dp/komisi";
+    default:
+      return "/about";
+  }
 }
