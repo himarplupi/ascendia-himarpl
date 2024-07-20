@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { LogoAscendia } from "@/components/brand/logo-ascendia";
@@ -18,8 +19,16 @@ export default async function Home() {
   return (
     <>
       <main className="min-h-screen md:container">
-        <section className="h-[100vh] max-h-[1080px] min-h-[740px]  w-full space-y-6 pb-12">
-          <div className="h-96 w-full bg-home-1 bg-cover bg-center md:bg-[center_70%]" />
+        <section className="h-[100vh] max-h-[1080px] min-h-[740px] w-full space-y-6 pb-12">
+          <div className="relative h-96 w-full">
+            <Image
+              alt="Kumpulan anggota HIMARPL pada saat pelantikan di depan gedung biru kampus UPI di Cibiru"
+              src="https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-home-1.png"
+              className="object-cover object-center md:object-[center_70%]"
+              fill
+              sizes="100%"
+            />
+          </div>
 
           <div className="container">
             <h3 className="font-serif text-3xl font-semibold tracking-wide md:text-6xl lg:text-8xl">
