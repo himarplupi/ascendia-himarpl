@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useTheme } from "next-themes";
+import Link from "next/link";
 
-import LogoLandscapeHIMARPLDark from "@/images/logo-landscape-dark.png";
 import LogoLandscapeHIMARPLLight from "@/images/logo-landscape-light.png";
 import { cn } from "@/lib/utils";
 
@@ -12,23 +11,18 @@ interface LogoHIMARPLLandscapeProps {
 }
 
 export function LogoHIMARPLLandscape({ className }: LogoHIMARPLLandscapeProps) {
-  const { resolvedTheme } = useTheme();
-
   return (
-    <div
+    <Link
+      href="/"
       id="brand-logo"
-      className={cn("relative aspect-video w-32", className)}
+      className={cn("relative inline-block aspect-video w-32", className)}
     >
       <Image
         className="object-scale-down"
-        src={
-          resolvedTheme === "dark"
-            ? LogoLandscapeHIMARPLDark
-            : LogoLandscapeHIMARPLLight
-        }
+        src={LogoLandscapeHIMARPLLight}
         alt="logo landscape HIMARPL"
         fill
       />
-    </div>
+    </Link>
   );
 }
