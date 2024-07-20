@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { History } from "@/components/about/history";
@@ -15,7 +16,14 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen pb-10 md:container lg:pb-0">
       {/* Section 1 */}
-      <section className="relative h-screen w-full bg-about-1 bg-cover bg-center bg-no-repeat before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:bg-opacity-75 before:bg-dark-transparent-dark-gradient before:backdrop-blur-sm before:backdrop-brightness-75 md:max-h-[1080px]">
+      <section className="relative h-screen w-full before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[1] before:bg-opacity-75 before:bg-dark-transparent-dark-gradient before:backdrop-blur-sm before:backdrop-brightness-75 md:max-h-[1080px]">
+        <Image
+          src="https://cdn.jsdelivr.net/gh/himarplupi/assets-himarpl@v1.3.2/www/bg/bg-about-1.png"
+          alt="Bendera HIMARPL ketika arak-arakan"
+          fill
+          sizes="(min-width: 1024px) 1024px, 100vw"
+          className="h-full w-full object-cover object-center"
+        />
         <div className="relative z-[2] flex h-full w-full items-center justify-center md:container md:justify-end ">
           <div className="w-full">
             <div className="container flex w-full flex-col items-center justify-center gap-2 md:h-40">
