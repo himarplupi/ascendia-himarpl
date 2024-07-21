@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { Footer, GlobalFooter } from "@/components/common";
+import { Portals } from "@/components/common/portals";
 
 export const metadata: Metadata = {
   title: "Kontak HIMARPL",
@@ -17,6 +18,9 @@ export default function ContactLayout({
     <>
       {children}
 
+      <section className="container min-h-64 w-full py-12">
+        <Portals />
+      </section>
       <Footer />
       <GlobalFooter />
     </>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { Footer, GlobalFooter } from "@/components/common";
+import { Portals } from "@/components/common/portals";
 
 export const metadata: Metadata = {
   title: "Dedikasi HIMARPL",
@@ -16,6 +17,11 @@ export default function DedicationLayout({
   return (
     <>
       {children}
+
+      <section className="container min-h-64 w-full py-12">
+        <Portals />
+      </section>
+
       <Footer />
       <GlobalFooter />
     </>

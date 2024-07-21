@@ -5,6 +5,7 @@ import { LogoAscendia } from "@/components/brand/logo-ascendia";
 import { Footer } from "@/components/common";
 import { GlobalFooter } from "@/components/common/global-footer";
 import { HorizontalScrollText } from "@/components/common/horizontal-scroll-text";
+import { Portals } from "@/components/common/portals";
 import { FadeIn } from "@/components/motion/fade-in";
 import { MotionText } from "@/components/motion/motion-text";
 import { WordRotate } from "@/components/motion/word-rotate";
@@ -265,6 +266,9 @@ export default async function Home() {
         </section>
       </main>
 
+      <section className="container min-h-64 w-full py-12">
+        <Portals />
+      </section>
       <Footer />
       <GlobalFooter />
     </>
