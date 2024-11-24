@@ -27,7 +27,7 @@
 
 ## What is this repo?
 
-[ascendia-himarpl](https://ascendia.himarpl.com/) by [HIMARPL's Communication and Information Department](https://www.himarpl.com/about/be/kominfo) is a New Student Admission (PMB) Website for Software Engineering UPI: Registration information, schedule, and requirements for Software Engineering study program admission at UPI Campus in Cibiru. This repo is the source code for that website. Built using [Next.js](https://nextjs.org), a React Framework.
+[ascendia-himarpl](https://ascendia.himarpl.com/) by [HIMARPL's Communication and Information Department](https://www.himarpl.com/about/be/kominfo) is the official website of HIMARPL Ascendia Cabinet. This repo is the source code for that website. Built using [Next.js](https://nextjs.org), a React Framework.
 
 ## Installation
 
@@ -62,5 +62,5 @@ Current integration is owned and managed by the Website Team at HIMARPL's Commun
 
 - Thanks to all contributors and collaborators who develop this project.
 
-[code of conduct]: https://github.com/himarplupi/pmb-himarpl/blob/main/CODE_OF_CONDUCT.md
-[contributing guide]: https://github.com/himarplupi/pmb-himarpl/blob/main/CONTRIBUTING.md
+[code of conduct]: https://github.com/himarplupi/ascendia-himarpl/blob/main/CODE_OF_CONDUCT.md
+[contributing guide]: https://github.com/himarplupi/ascendia-himarpl/blob/main/CONTRIBUTING.md
