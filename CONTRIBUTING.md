@@ -1,8 +1,8 @@
-# HIMARPL Blog Website Contributing Guide
+# HIMARPL PMB Website Contributing Guide
 
-Thank you for your interest in contributing to the HIMARPL Ascendia Cabinet Website. Before proceeding, please briefly read the following:
+Thank you for your interest in contributing to the HIMARPL PMB Website. Before proceeding, please briefly read the following:
 
-- [Code of Conduct](https://github.com/himarplupi/ascendia-himarpl/blob/main/CODE_OF_CONDUCT.md)
+- [Code of Conduct](https://github.com/himarplupi/pmb-himarpl/blob/main/CODE_OF_CONDUCT.md)
 - [Contributing](#contributing)
 - [Getting Started](#getting-started)
   - [CLI Commands](#cli-commands)
@@ -12,7 +12,7 @@ Thank you for your interest in contributing to the HIMARPL Ascendia Cabinet Webs
 
 ## Contributing
 
-Any individual is welcome to contribute to the HIMARPL Ascendia Cabinet Website. This repository currently has two types of contribution personas:
+Any individual is welcome to contribute to the HIMARPL PMB Website. This repository currently has two types of contribution personas:
 
 - **Contributors** are any individuals who create issues/PRs, comment on issues/PRs, or contribute in other ways.
 
@@ -20,22 +20,22 @@ Any individual is welcome to contribute to the HIMARPL Ascendia Cabinet Website.
 
 ## Getting Started
 
-The steps below will give you an overview of how to set up your local environment for the HIMARPL Ascendia Cabinet Website and the general steps to complete something and submit your contribution.
+The steps below will give you an overview of how to set up your local environment for the HIMARPL PMB Website and the general steps to complete something and submit your contribution.
 
-1. Click the fork button in the top right to copy the [HIMARPL Ascendia Cabinet Website Repository](https://github.com/himarplupi/ascendia-himarpl/fork)
+1. Click the fork button in the top right to copy the [HIMARPL PMB Website Repository](https://github.com/himarplupi/pmb-himarpl/fork)
 
 2. Clone your fork using SSH, GitHub CLI, or HTTPS.
 
    ```bash
-   git clone git@github.com:<YOUR_GITHUB_USERNAME>/ascendia-himarpl.git # SSH
-   git clone https://github.com/<YOUR_GITHUB_USERNAME>/ascendia-himarpl.git # HTTPS
-   gh repo clone <YOUR_GITHUB_USERNAME>/ascendia-himarpl # GitHub CLI
+   git clone git@github.com:himarplupi/pmb-himarpl.git # SSH
+   git clone https://github.com/himarplupi/pmb-himarpl.git # HTTPS
+   gh repo clone himarplupi/pmb-himarpl # GitHub CLI
    ```
 
-3. Change to the ascendia-himarpl directory.
+3. Change to the pmb-himarpl directory.
 
    ```bash
-   cd ascendia-himarpl
+   cd pmb-himarpl
    ```
 
    1. **Prerequisites for .env file**: Create a `.env` file in the project root.
@@ -46,26 +46,12 @@ The steps below will give you an overview of how to set up your local environmen
       DATABASE_URL=
       ```
 
-   3. Follow the getting started guide at [Google OAuth](https://developers.google.com/identity/protocols/oauth2) to get OAuth 2.0 credentials from Google API Console for `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` values.
-
-      ```bash
-      GOOGLE_CLIENT_ID=
-      GOOGLE_CLIENT_SECRET=
-      ```
-
-   4. Follow the getting started guide at [Upstash Ratelimiting](https://upstash.com/docs/oss/sdks/ts/ratelimit/gettingstarted) to get `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` values.
-
-      ```bash
-      UPSTASH_REDIS_REST_URL=
-      UPSTASH_REDIS_REST_TOKEN=
-      ```
-
 4. Create a remote to sync your fork and local clone with the main repository.
 
    ```bash
-   git remote add upstream git@github.com:himarplupi/ascendia-himarpl.git # SSH
-   git remote add upstream https://github.com/himarplupi/ascendia-himarpl.git # HTTPS
-   gh repo sync himarplupi/ascendia-himarpl # GitHub CLI
+   git remote add upstream git@github.com:himarplupi/pmb-himarpl.git # SSH
+   git remote add upstream https://github.com/himarplupi/pmb-himarpl.git # HTTPS
+   gh repo sync himarplupi/pmb-himarpl # GitHub CLI
    ```
 
 5. Create a new branch for your work.
@@ -100,7 +86,7 @@ The steps below will give you an overview of how to set up your local environmen
 10. Once you're satisfied with your changes, add and commit them to your branch, then push the branch to your fork.
 
     ```bash
-    cd ~/ascendia-himarpl
+    cd ~/pmb-himarpl
     git add .
     git commit # Please follow the commit guidelines below
     git push -u origin your-branch-name
