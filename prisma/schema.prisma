@@ -1,8 +1,8 @@
-// This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
 }
 
 datasource db {
@@ -54,7 +54,6 @@ model Post {
   @@unique([authorId, slug])
 }
 
-// Define the department model
 model Department {
   id          String         @id @default(cuid())
   name        String
@@ -102,7 +101,6 @@ model User {
   sessions      Session[]
 }
 
-// Necessary for Next auth
 model Account {
   id                String  @id @default(cuid())
   userId            String
