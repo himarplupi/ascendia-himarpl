@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://blog.himarpl.com">ascendia.himarpl.com</a> Website dibangun menggunakan Next.js dengan <a href="https://create.t3.gg/en/introduction">T3 Stack</a>.
+  <a href="https://blog.himarpl.com">ascendia.himarpl.com</a> Website built using Next.js with <a href="https://create.t3.gg/en/introduction">T3 Stack</a>.
 </p>
 
 <p align="center">
@@ -25,42 +25,42 @@
   <br />
 </p>
 
-## Ini repo apa sih?
+## What is this repo?
 
-[ascendia-himarpl](https://ascendia.himarpl.com/) oleh [Departemen Kominfo HIMARPL](https://www.himarpl.com/about/be/kominfo) adalah website resmi Kabinet Ascendia HIMARPL. Repo ini adalah kode sumber untuk website tersebut. Dibangun menggunakan [Next.js](https://nextjs.org), sebuah Framework React.
+[ascendia-himarpl](https://ascendia.himarpl.com/) by [HIMARPL's Communication and Information Department](https://www.himarpl.com/about/be/kominfo) is the official website of HIMARPL Ascendia Cabinet. This repo is the source code for that website. Built using [Next.js](https://nextjs.org), a React Framework.
 
-## Instalasi
+## Installation
 
-Ikuti panduan memulai installasi dari [Panduan Kontribusi][] untuk menyiapkan proyek secara lokal.
+Follow the getting started guide from the [Contributing Guide][] to set up the project locally.
 
 ```bash
 npm ci
 npm run dev
 ```
 
-## Kontribusi
+## Contributing
 
-Proyek ini mengadopsi [Kode Etik][] HIMARPL.
-Dokumentasi untuk desain infrastruktur lengkap dapat ditemukan di [Website Dokumentasi HIMARPL](https://docs.himarpl.com).
+This project adopts HIMARPL's [Code of Conduct][].
+Complete infrastructure design documentation can be found at [HIMARPL Documentation Website](https://docs.himarpl.com).
 
 > \[!NOTE]\
-> Kami merekomendasikan membaca semua Tautan Relevan di bawah ini sebelum melakukan perubahan kode; Termasuk perubahan Dependency, perubahan Konten, dan perubahan Kode.
+> We recommend reading all Relevant Links below before making code changes; Including Dependency changes, Content changes, and Code changes.
 
 ### Deployment
 
-Website secara otomatis di-deploy ke [Vercel](https://vercel.com) melalui integrasi Aplikasi GitHub Action saat ada push baru pada cabang `main`.
+The website is automatically deployed to [Vercel](https://vercel.com) through GitHub Action App integration when there's a new push to the `main` branch.
 
-Integrasi saat ini dimiliki dan dikelola oleh Tim Website di Departemen Kominfo HIMARPL.
+Current integration is owned and managed by the Website Team at HIMARPL's Communication and Information Department.
 
-## Tautan Relevan
+## Relevant Links
 
-[Kode Etik][]
+[Code of Conduct][]
 
-[Panduan Kontribusi][]
+[Contributing Guide][]
 
-## Terima Kasih
+## Acknowledgments
 
-- Terima kasih kepada semua kontributor dan kolaborator yang mengembangkan proyek ini.
+- Thanks to all contributors and collaborators who develop this project.
 
-[kode etik]: https://github.com/himarplupi/ascendia-himarpl/blob/main/CODE_OF_CONDUCT.md
-[panduan kontribusi]: https://github.com/himarplupi/ascendia-himarpl/blob/main/CONTRIBUTING.md
+[code of conduct]: https://github.com/himarplupi/ascendia-himarpl/blob/main/CODE_OF_CONDUCT.md
+[contributing guide]: https://github.com/himarplupi/ascendia-himarpl/blob/main/CONTRIBUTING.md
