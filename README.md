@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://blog.himarpl.com">ascendia.himarpl.com</a> Website built using Next.js with <a href="https://create.t3.gg/en/introduction">T3 Stack</a>.
+  <a href="https://ascendia.himarpl.com">ascendia.himarpl.com</a> Website built using Next.js with <a href="https://create.t3.gg/en/introduction">T3 Stack</a>.
 </p>
 
 <p align="center">

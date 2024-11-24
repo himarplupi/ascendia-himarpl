@@ -1,8 +1,8 @@
-# HIMARPL PMB Website Contributing Guide
+# HIMARPL Ascendia Cabinet Website Contributing Guide
 
-Thank you for your interest in contributing to the HIMARPL PMB Website. Before proceeding, please briefly read the following:
+Thank you for your interest in contributing to the HIMARPL Ascendia Cabinet Website. Before proceeding, please briefly read the following:
 
-- [Code of Conduct](https://github.com/himarplupi/pmb-himarpl/blob/main/CODE_OF_CONDUCT.md)
+- [Code of Conduct](https://github.com/himarplupi/ascendia-himarpl/blob/main/CODE_OF_CONDUCT.md)
 - [Contributing](#contributing)
 - [Getting Started](#getting-started)
   - [CLI Commands](#cli-commands)
@@ -12,7 +12,7 @@ Thank you for your interest in contributing to the HIMARPL PMB Website. Before p
 
 ## Contributing
 
-Any individual is welcome to contribute to the HIMARPL PMB Website. This repository currently has two types of contribution personas:
+Any individual is welcome to contribute to the HIMARPL Ascendia Cabinet Website. This repository currently has two types of contribution personas:
 
 - **Contributors** are any individuals who create issues/PRs, comment on issues/PRs, or contribute in other ways.
 
@@ -20,22 +20,22 @@ Any individual is welcome to contribute to the HIMARPL PMB Website. This reposit
 
 ## Getting Started
 
-The steps below will give you an overview of how to set up your local environment for the HIMARPL PMB Website and the general steps to complete something and submit your contribution.
+The steps below will give you an overview of how to set up your local environment for the HIMARPL Ascendia Cabinet Website and the general steps to complete something and submit your contribution.
 
-1. Click the fork button in the top right to copy the [HIMARPL PMB Website Repository](https://github.com/himarplupi/pmb-himarpl/fork)
+1. Click the fork button in the top right to copy the [HIMARPL Ascendia Cabinet Website Repository](https://github.com/himarplupi/ascendia-himarpl/fork)
 
 2. Clone your fork using SSH, GitHub CLI, or HTTPS.
 
    ```bash
-   git clone git@github.com:himarplupi/pmb-himarpl.git # SSH
-   git clone https://github.com/himarplupi/pmb-himarpl.git # HTTPS
-   gh repo clone himarplupi/pmb-himarpl # GitHub CLI
+   git clone git@github.com:himarplupi/ascendia-himarpl.git # SSH
+   git clone https://github.com/himarplupi/ascendia-himarpl.git # HTTPS
+   gh repo clone himarplupi/ascendia-himarpl # GitHub CLI
    ```
 
-3. Change to the pmb-himarpl directory.
+3. Change to the ascendia-himarpl directory.
 
    ```bash
-   cd pmb-himarpl
+   cd ascendia-himarpl
    ```
 
    1. **Prerequisites for .env file**: Create a `.env` file in the project root.
@@ -49,9 +49,9 @@ The steps below will give you an overview of how to set up your local environmen
 4. Create a remote to sync your fork and local clone with the main repository.
 
    ```bash
-   git remote add upstream git@github.com:himarplupi/pmb-himarpl.git # SSH
-   git remote add upstream https://github.com/himarplupi/pmb-himarpl.git # HTTPS
-   gh repo sync himarplupi/pmb-himarpl # GitHub CLI
+   git remote add upstream git@github.com:himarplupi/ascendia-himarpl.git # SSH
+   git remote add upstream https://github.com/himarplupi/ascendia-himarpl.git # HTTPS
+   gh repo sync himarplupi/ascendia-himarpl # GitHub CLI
    ```
 
 5. Create a new branch for your work.
@@ -86,7 +86,7 @@ The steps below will give you an overview of how to set up your local environmen
 10. Once you're satisfied with your changes, add and commit them to your branch, then push the branch to your fork.
 
     ```bash
-    cd ~/pmb-himarpl
+    cd ~/ascendia-himarpl
     git add .
     git commit # Please follow the commit guidelines below
     git push -u origin your-branch-name
