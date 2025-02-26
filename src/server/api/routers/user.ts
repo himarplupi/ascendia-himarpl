@@ -7,15 +7,21 @@ export const userRouter = createTRPCRouter({
     .input(
       z.object({
         acronym: z.string(),
-        type: z.enum(["BE", "DP"]).optional(),
+        type: z.string().optional(),
+        periodYear: z.number().optional(),
       }),
     )
     .query(async ({ ctx, input }) => {
       return await ctx.db.user.findMany({
         where: {
-          department: {
-            acronym: input.acronym,
-            type: input.type,
+          departments: {
+            some: {
+              AND: {
+                acronym: input.acronym,
+                type: input.type,
+                periodYear: input.periodYear,
+              },
+            },
           },
         },
         select: {
@@ -23,8 +29,10 @@ export const userRouter = createTRPCRouter({
           username: true,
           image: true,
           name: true,
-          position: true,
-          socialMedia: true,
+          periods: true,
+          positions: true,
+          socialMedias: true,
+          departments: true,
         },
       });
     }),

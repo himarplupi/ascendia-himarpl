@@ -56,19 +56,22 @@ export default async function AboutTypePage({ params }: AboutTypePageProps) {
   const pimpinanUsers = await api.user.byDepartment({
     acronym: pimpinanDepartment.acronym,
     type: pimpinanDepartment.type,
+    periodYear: 2024,
   });
 
   const mappedPimpinanUsers = pimpinanUsers.map((user) => ({
     id: user.id,
-    github: user.socialMedia.find(
-      (socialMedia) => socialMedia.name === "github",
+    github: user.socialMedias.find(
+      (socialMedia) => socialMedia?.name === "github",
     )?.username,
     image: user.image,
-    instagram: user.socialMedia.find(
-      (socialMedia) => socialMedia.name === "instagram",
+    instagram: user.socialMedias.find(
+      (socialMedia) => socialMedia?.name === "instagram",
     )?.username,
     name: user.name,
-    position: user.position,
+    position: user.positions.at(
+      user.periods.findIndex((period) => period.year === 2024),
+    )?.name,
     username: user.username,
   }));
 
@@ -144,7 +147,7 @@ export default async function AboutTypePage({ params }: AboutTypePageProps) {
             Program Kerja
           </h5>
 
-          <Proker list={pimpinanDepartment.programs} />
+          <Proker list={pimpinanDepartment?.programs.map((p) => p.content)} />
         </FadeIn>
       </section>
 

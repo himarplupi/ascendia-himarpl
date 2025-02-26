@@ -2,7 +2,7 @@ import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 
 export const postRouter = createTRPCRouter({
   newest: publicProcedure.query(async ({ ctx }) => {
-    return await ctx.db.post.findMany({
+    const res = await ctx.db.post.findMany({
       where: {
         publishedAt: {
           not: null,
@@ -37,5 +37,8 @@ export const postRouter = createTRPCRouter({
         },
       },
     });
+
+    console.log(res);
+    return res;
   }),
 });

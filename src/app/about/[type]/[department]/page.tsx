@@ -43,14 +43,26 @@ export default async function AboutDepartmentPage({
 
   if (!department) return notFound();
 
-  const ketua = department.users.find((user) => user.position == "ketua");
+  const ketua = department.users.find(
+    (user) =>
+      // Get the current user position in period 2024
+      user.positions.at(
+        user.periods.findIndex((period) => period.year === 2024),
+      )?.name == "ketua",
+  );
 
   const staffs = department.users
-    .filter((user) => user.position !== "ketua")
+    .filter(
+      // Get the current user position in period 2024
+      (user) =>
+        user.positions.at(
+          user.periods.findIndex((period) => period.year === 2024),
+        )?.name !== "ketua",
+    )
     .map((user) => ({
       id: user.id,
-      github: user.socialMedia.find((sm) => sm.name === "github")?.username,
-      instagram: user.socialMedia.find((sm) => sm.name === "instagram")
+      github: user.socialMedias.find((sm) => sm.name === "github")?.username,
+      instagram: user.socialMedias.find((sm) => sm.name === "instagram")
         ?.username,
       image: user.image,
       name: user.name,
@@ -111,7 +123,7 @@ export default async function AboutDepartmentPage({
             />
           </h5>
 
-          <Proker list={department.programs} />
+          <Proker list={department.programs.map((p) => p.content)} />
         </section>
       </div>
 
@@ -134,10 +146,10 @@ export default async function AboutDepartmentPage({
               image={ketua.image}
               username={ketua.username}
               github={
-                ketua.socialMedia.find((sm) => sm.name === "github")?.username
+                ketua.socialMedias.find((sm) => sm.name === "github")?.username
               }
               instagram={
-                ketua.socialMedia.find((sm) => sm.name === "instagram")
+                ketua.socialMedias.find((sm) => sm.name === "instagram")
                   ?.username
               }
             />
