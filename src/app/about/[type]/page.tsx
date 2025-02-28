@@ -69,8 +69,8 @@ export default async function AboutTypePage({ params }: AboutTypePageProps) {
       (socialMedia) => socialMedia?.name === "instagram",
     )?.username,
     name: user.name,
-    position: user.positions.at(
-      user.periods.findIndex((period) => period.year === 2024),
+    position: user.positions.find(
+      (p) => p.departmentId === pimpinanDepartment.id,
     )?.name,
     username: user.username,
   }));

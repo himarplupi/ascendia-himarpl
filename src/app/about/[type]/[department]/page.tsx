@@ -46,9 +46,8 @@ export default async function AboutDepartmentPage({
   const ketua = department.users.find(
     (user) =>
       // Get the current user position in period 2024
-      user.positions.at(
-        user.periods.findIndex((period) => period.year === 2024),
-      )?.name == "ketua",
+      user.positions.find((p) => p.departmentId === department.id)?.name ==
+      "ketua",
   );
 
   const staffs = department.users
@@ -56,7 +55,7 @@ export default async function AboutDepartmentPage({
       // Get the current user position in period 2024
       (user) =>
         user.positions.at(
-          user.periods.findIndex((period) => period.year === 2024),
+          user.positions.findIndex((p) => p.departmentId === department.id),
         )?.name !== "ketua",
     )
     .map((user) => ({
