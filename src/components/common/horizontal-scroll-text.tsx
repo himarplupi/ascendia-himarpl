@@ -51,6 +51,7 @@ function ParallaxText({
   const { scrollY } = useScroll();
 
   const scrollVelocity = useVelocity(scrollY);
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
   const smoothVelocity = useSpring(scrollVelocity, {
     damping: 50,
     stiffness: 400,

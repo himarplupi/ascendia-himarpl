@@ -5,8 +5,8 @@ import {
   motion,
   type Transition,
   useInView,
-  type Variants,
-} from "framer-motion";
+type UseInViewOptions,
+  type Variants} from "framer-motion";
 
 type MotionTextProps = {
   to?: "top" | "bottom" | "left" | "right";
@@ -15,7 +15,7 @@ type MotionTextProps = {
   amount?: number;
   children: React.ReactNode;
   className?: string;
-  margin?: string;
+  margin?: UseInViewOptions["margin"];
 };
 
 export function FadeIn({
@@ -53,7 +53,7 @@ export const useFadeIn = (
   to = "top",
   once = true,
   amount = 1,
-  margin = "0px",
+  margin: UseInViewOptions["margin"] = "0px",
 ) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { amount, once, margin });

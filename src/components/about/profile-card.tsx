@@ -72,12 +72,10 @@ export function ProfileCard({
                     buttonVariants({ variant: "ghost-invert", size: "icon" }),
                   )}
                 >
-                  {/* @ts-expect-error: Entahlah SimpleIcon gaje */}
                   <SiInstagram className="h-6 w-6" />
                 </Link>
               ) : (
                 <Button variant="ghost" size="icon" disabled>
-                  {/* @ts-expect-error: Entahlah SimpleIcon gaje */}
                   <SiInstagram className="h-6 w-6 text-zinc-100" />
                 </Button>
               )}
@@ -90,12 +88,10 @@ export function ProfileCard({
                     buttonVariants({ variant: "ghost-invert", size: "icon" }),
                   )}
                 >
-                  {/* @ts-expect-error: Entahlah SimpleIcon gaje */}
                   <SiGithub className="h-6 w-6" />
                 </Link>
               ) : (
                 <Button variant="ghost" size="icon" disabled>
-                  {/* @ts-expect-error: Entahlah SimpleIcon gaje */}
                   <SiGithub className="h-6 w-6 text-zinc-100" />
                 </Button>
               )}
