@@ -12,6 +12,7 @@ const adapter = new PrismaLibSQL(libsql);
 
 const createPrismaClient = () =>
   new PrismaClient({
+    // @ts-expect-error invalid
     adapter,
     log:
       env.NODE_ENV === "development" ? ["query", "error", "warn"] : ["error"],
