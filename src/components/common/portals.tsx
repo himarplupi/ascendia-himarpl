@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { GraduationCapIcon, NewspaperIcon } from "lucide-react";
+import { NewspaperIcon } from "lucide-react";
 
-import Ripple from "@/components//ui/ripple";
+// import Ripple from "@/components//ui/ripple";
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { cn } from "@/lib/utils";
