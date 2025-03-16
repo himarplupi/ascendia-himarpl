@@ -10,22 +10,43 @@ import { cn } from "@/lib/utils";
 
 const portals = [
   {
-    Icon: GraduationCapIcon,
-    name: "Penerimaan Mahasiswa Baru",
+    Icon: NewspaperIcon,
+    name: "Tulisan-tulisan Pengurus HIMARPL",
     description:
-      "Informasi penerimaan mahasiswa baru jalur SNBP, SNBT, SM-UPI, dan SM-Prestasi program studi RPL UPI.",
-    href: "https://pmb.himarpl.com",
+      "Tulisan-tulisan pengurus HIMARPL yang berisi informasi dan cerita seputar perkuliahan dan kehidupan kampus.",
+    href: "https://blog.himarpl.com",
     cta: "Selengkapnya",
     background: (
-      <Ripple
-        mainCircleSize={96}
-        numCircles={12}
-        mainCircleOpacity={0.28}
-        className="-left-32 -top-40 md:-left-80"
+      <AnimatedGridPattern
+        numSquares={48}
+        maxOpacity={0.1}
+        duration={3}
+        repeatDelay={1}
+        className={cn(
+          "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
+          "absolute inset-x-0 inset-y-[-30%] -top-96 h-[200%] skew-y-12",
+        )}
       />
     ),
-    className: "lg:row-start-1 lg:row-end-4 lg:col-start-1 lg:col-end-2",
+    className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
   },
+  // {
+  //   Icon: GraduationCapIcon,
+  //   name: "Penerimaan Mahasiswa Baru",
+  //   description:
+  //     "Informasi penerimaan mahasiswa baru jalur SNBP, SNBT, SM-UPI, dan SM-Prestasi program studi RPL UPI.",
+  //   href: "https://pmb.himarpl.com",
+  //   cta: "Selengkapnya",
+  //   background: (
+  //     <Ripple
+  //       mainCircleSize={96}
+  //       numCircles={12}
+  //       mainCircleOpacity={0.28}
+  //       className="-left-32 -top-40 md:-left-80"
+  //     />
+  //   ),
+  //   className: "lg:row-start-1 lg:row-end-4 lg:col-start-1 lg:col-end-2",
+  // },
   {
     Icon: NewspaperIcon,
     name: "Tulisan-tulisan Pengurus HIMARPL",

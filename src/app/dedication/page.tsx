@@ -50,7 +50,7 @@ export default function DedicationPage() {
                 <Lampiran type="dedication-1" />
                 <Link
                   target="_blank"
-                  href="https://wa.me/+6285885725027"
+                  href="https://wa.me/+6282219093410"
                   className={cn(buttonVariants({ variant: "outline" }))}
                 >
                   Hubungi Advokastra
@@ -155,7 +155,7 @@ export default function DedicationPage() {
                 <section className="container flex w-full flex-col gap-2">
                   <Link
                     target="_blank"
-                    href="https://wa.me/+6285885725027"
+                    href="https://wa.me/+6282219093410"
                     className={cn(buttonVariants({ variant: "outline" }))}
                   >
                     Hubungi Advokastra

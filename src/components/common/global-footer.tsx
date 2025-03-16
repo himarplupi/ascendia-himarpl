@@ -178,7 +178,7 @@ function Pranala() {
             Blog HIMARPL
           </Link>
         </li>
-        <li className="overflow-hidden">
+        {/* <li className="overflow-hidden">
           <Link
             target="_blank"
             className="inline-block text-sm leading-4 text-muted-foreground hover:underline"
@@ -186,7 +186,7 @@ function Pranala() {
           >
             Penerimaan Mahasiswa Baru HIMARPL
           </Link>
-        </li>
+        </li> */}
         <li className="overflow-hidden">
           <Link
             target="_blank"
